@@ -1,0 +1,146 @@
+.classification{
+  width:100%;
+  min-height:1150rpx;
+  background:#f5f5f5;
+  
+}
+/*头部导航条  */
+.topscroole{
+ /* width:1900rpx; */
+  height:83rpx;
+  /* border-top:1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6; */
+  background:#ffffff;
+  /* overflow-x: scroll; */
+   /* position:relative;
+  top: 0;
+  z-index: 9999;    */
+
+}
+.topscroller{
+  width:125rpx;
+  float:left;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin: 0 0 8rpx 0;
+  text-align:center; 
+   border-bottom: solid 2rpx #fff;
+   box-sizing: border-box;
+}
+ .active{
+  color: #7b2daf;
+   height:85rpx; 
+  border-bottom: solid 5rpx #6e08a8;
+} 
+/* 中间的内容 */
+.containerMain {
+  /* height: 100%; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*padding: 200rpx 0;*/
+  box-sizing: border-box;
+
+}
+ /* .containerMain.withtab{
+   margin: 75rpx 0 0 0; 
+  top: 105rpx;
+}  */
+/*商品的样式  */
+.advertising{
+  width:354rpx;
+  height:474rpx;
+  background:#ffffff;
+  margin-left:14rpx;
+  margin-top:20rpx;
+  float:left;
+}
+.advertising .storeItem{
+  width:354rpx;
+  height:354rpx;
+}
+.advertising .advertisingText{
+    font-size:24rpx;
+    color:#333333;
+    margin-left:20rpx;
+    white-space:nowrap;
+    text-overflow:ellipsis; 
+    overflow:hidden;
+    height:45rpx;
+
+}
+.advertising .advertPrice{
+  font-size:28rpx;
+  color:#6e08a8;
+  margin-left:20rpx;
+}
+.advertising .advertqi{
+    font-size:20rpx;
+    color:#999;
+    margin-left:10rpx;
+}
+/* 回到顶部的样式 */
+.com-widget-goTop { 
+position: fixed; 
+bottom: 250rpx; 
+right: 10rpx; 
+background: #000; 
+border-radius: 50%; 
+overflow: hidden; 
+z-index: 500; 
+opacity: .7;
+} 
+.com-widget-goTop .icon-gotop{ 
+  position:relative;
+background-color: #000; 
+display: inline-block; 
+width: 100rpx; 
+height: 100rpx; 
+line-height: 136rpx; 
+font-size: 24rpx; 
+color: #ffffff; 
+text-align: center; 
+border-radius: 50%; 
+opacity: .7;
+}
+.topImg{
+  position:absolute;
+  top:18rpx;
+  left:35rpx;
+}
+/*暂无商品*/
+.shopnone{
+  width:750rpx;
+  background:#ffffff;
+  min-height:1113rpx;
+}
+.ordernoneImg{
+    width:400rpx;
+    height:322rpx;
+    margin:0 auto;
+}
+.ordernone{
+   width:350rpx;
+   height:300rpx;
+   margin-top:135rpx;
+  
+}
+.text{
+  margin-top:140rpx;
+  text-align: center;
+  font-size:28rpx;
+  color:#999;
+  /* margin-left:70rpx; */
+}
+.gifloding{
+  width:60rpx;
+  height:60rpx;
+}
+.gifText{
+  float:right;
+  margin-top:18rpx;
+  margin-right:200rpx;
+  color:#999;
+
+}

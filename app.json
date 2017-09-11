@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userBind/userBind",
+    
+    "pages/ShoppingMore/ShoppingMore",
+    "pages/Shopping/Shop",   
+    "pages/ShopAttributeOne/ShopAttributeOne",
+    "pages/ShopNR/ShopNR",     
+    "pages/orderDetail/orderDetail",
+    
+    "pages/sort/sort",
+    "pages/logs/logs",
+    "pages/myHome/myHome",
+    "pages/ShoppingCart/ShoppingCart",
+    "pages/storeHome/storeHome",
+    "pages/orderlist/orderlist",
+    "pages/search/search_classify",
+    "pages/submitOrder/submitOrder",  
+    "pages/refreshto/refreshtoPage"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "丝集网",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#6e08a8",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "posiation": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "selectedIconPath": "pages/images/homeIndexImage2.png",
+        "iconPath": "pages/images/homeIndexImage1.png"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "text": "分类",
+        "selectedIconPath": "pages/images/moreClassImages2.png",
+        "iconPath": "pages/images/moreClassImages1.png"
+      },
+      {
+        "pagePath": "pages/ShoppingCart/ShoppingCart",
+        "text": "购物车",
+        "selectedIconPath": "pages/images/indexCar2.png",
+        "iconPath": "pages/images/indexCar1.png"},
+      {
+        "pagePath": "pages/myHome/myHome",
+        "text": "我的",
+        "selectedIconPath": "pages/images/myHomeIndex2.png",
+        "iconPath": "pages/images/myHomeIndex1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

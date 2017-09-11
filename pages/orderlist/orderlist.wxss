@@ -1,0 +1,315 @@
+
+.orderController{
+  width:100%;
+   /* height:100%; */
+  min-height:558px; 
+  background:#fafafa;
+}
+
+/*头部导航条  */
+.all{
+  display:inline-block;
+}
+.flex-wrp{
+  display: flex;
+}
+.flex-tab{
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.flex-item{
+  /* flex-grow: 0.5;   */
+  text-align: center;
+}
+.top-tab{
+  width:750rpx;
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 80rpx;
+   margin: 0 0 8rpx 0; 
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-top:1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  background:#ffffff;
+}
+.toptab.active{
+  color: #7b2daf;
+  border-bottom: solid 3px #6e08a8;
+}
+/* 中间的内容 */
+.containerMain {
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /*padding: 200rpx 0;*/
+  box-sizing: border-box;
+
+}
+.containerMain.withtab{
+  margin: 90rpx 0 0 0;
+  /*top: 105rpx;*/
+}
+
+/*全部订单样式  */
+.orderPageslist{
+  width:694rpx;
+  margin:0rpx auto;
+  margin-bottom:20rpx;
+  background:#ffffff;
+}
+.ordermainlist{
+  width:750rpx;
+  height:auto;
+  background:#ffffff;
+}
+.orderPageslist .orderlogo{
+  width:26rpx;
+  height:26rpx;
+  float:left;
+  margin-top:16rpx;
+  /* position:absolute;
+  top:20rpx;
+  left:30rpx; */
+}
+.orderPagesText{
+  height:68rpx;
+  line-height:60rpx;
+   border-bottom: 1px solid #e6e6e6;
+}
+.orderStore{
+   font-size:24rpx;
+   color:#333;
+   margin-left:20rpx;
+   overflow: hidden;
+   text-overflow:ellipsis;
+   white-space: nowrap;
+   width:150rpx;
+   float:left;
+   /* display:inline-block; */
+}
+.orderTime{
+  font-size:22rpx;
+  color:#666666;
+  margin-left:15rpx;
+}
+.orderstatus{
+  font-size:24rpx;
+  color:#6e08a8;
+   display: inline-block;
+   float:right;
+}
+.orderShop{
+  display:flex;
+  border-bottom:1px solid #e6e6e6;
+}
+.ordershoplogo .storeLogo1{
+  width:156rpx;
+  height:156rpx;
+  padding-top:15rpx;
+}
+.orderleft{
+  margin-left:40rpx;
+  width:68%;
+}
+.merchandise{
+  font-size:26rpx;
+  color:#333;
+  padding-top:20rpx;
+}
+.specification{
+  display: inline-block;
+  margin-top:20rpx;
+   font-size:24rpx;
+  color:#999;
+  margin-right:20rpx;
+}
+/* .specification .ordercolor{
+  font-size:24rpx;
+  color:#999;
+}
+.specification .ordersize{
+  font-size:24rpx;
+  color:#999;
+} */
+.commodities{
+  display:flex;
+  justify-content:space-between;
+  margin-top:30rpx;
+
+}
+.commodities .measurement{
+  font-size:24rpx;
+  color:#999999;
+}
+.commodities .orderNum{
+  font-size:28rpx;
+  color:#333;
+}
+.orderMun{
+  height:64rpx;
+  line-height:64rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+.orderMun .orderMunshop{
+  font-size:24rpx;
+  color:#333333;
+   margin-left:350rpx; 
+}
+.orderMun .actualpayment{
+  font-size:24rpx;
+  color:#333333;
+  margin-left:25rpx;
+}
+.orderMun .actualprice{
+   font-size:28rpx;
+  color:#6e08a8;
+}
+.details{
+  height:76rpx;
+}
+.detailsText{
+  width:140rpx;
+  height:46rpx;
+  border:1px solid #999;
+  text-align:center;
+  font-size:24rpx;
+  color:#666;
+  float:right;
+  line-height:48rpx;
+  margin-top:15rpx;
+  display:inline-block;
+  border-radius:6rpx;
+  margin-left:10rpx;
+}
+.detailspayment{
+  width:140rpx;
+  height:46rpx;
+  border:1px solid #6e08a8;
+  text-align:center;
+  font-size:24rpx;
+  color:#6e08a8;
+  float:right;
+  line-height:48rpx;
+  margin-top:15rpx;
+  display:inline-block;
+  border-radius:6rpx;
+  margin-left:10rpx;
+
+}
+.orderPage2{
+  height:auto;
+  background:#ffffff;
+}
+.orderPage3{
+  height:auto;
+  background:#ffffff;
+}
+.orderPage4{
+  height:auto;
+  background:#ffffff;
+}
+/*暂无记录*/
+.orderNone{
+  width:750rpx;
+  background:#ffffff;
+  height:1113rpx;
+}
+.ordernoneImg{
+    width:321rpx;
+    height:322rpx;
+    margin:0 auto;
+}
+.noneImg{
+   width:321rpx;
+   height:322rpx;
+   margin-top:135rpx;
+   margin-left:-20rpx;
+  
+}
+
+.orderShade{
+    width:100%;
+    height:100%;
+    position: fixed;
+    left:0;
+    top:0;
+    bottom: 0;
+    right:0;
+    background: rgba(0,0,0,.1);
+    z-index:99999999;
+}
+.shadeBox{
+  width: 560rpx;
+  height: 290rpx;
+  background-color: #fff;
+  margin:50% auto;
+  border-radius: 10rpx;
+}
+.shadeBoxTop{
+  height: 190rpx;
+  border-bottom: solid 1rpx #e6e6e6;
+  text-align: center;
+  line-height: 190rpx;
+  font-size: 36rpx;
+  color: #000;
+}
+.shadeBoxBut{
+  display: flex;
+  text-align: center;
+  line-height: 96rpx;
+  /* justify-content: space-around; */
+  /* height: 96rpx; */
+}
+.shadeBoxCan{
+ width: 279rpx;
+ border-right: solid 1rpx #e6e6e6;
+    height: 96rpx; 
+    font-size: 36rpx;
+  color: #000;
+}
+.shadeBoxYes{
+  width: 279rpx;
+  height: 96rpx; 
+  text-align: center;
+  font-size: 36rpx;
+  color: #6e08a8;
+}
+.limitWidth{
+  width: 50%
+}
+/* 回到顶部的样式 */
+.com-widget-goTop { 
+    position: fixed; 
+    bottom: 250rpx; 
+    right: 10rpx; 
+    background: #000; 
+    border-radius: 50%; 
+    overflow: hidden; 
+    z-index: 500; 
+    opacity: .7;
+} 
+.com-widget-goTop .icon-gotop{ 
+  position:relative;
+  background-color: #000; 
+  display: inline-block; 
+  width: 100rpx; 
+  height: 100rpx; 
+  line-height: 136rpx; 
+  font-size: 24rpx; 
+  color: #ffffff; 
+  text-align: center; 
+  border-radius: 50%; 
+  opacity: .7;
+  /* background: url("../images/topGO.png") no-repeat;
+  background-size: 30rpx ;
+  background-position: 35rpx 15rpx; */
+}
+.topImg{
+  position:absolute;
+  top:18rpx;
+  left:32rpx;
+}

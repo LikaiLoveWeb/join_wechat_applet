@@ -1,0 +1,61 @@
+<scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower= "scrolltolower" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+<view class="storeBox">
+  <view class="storeTop">
+     <image src="../../pages/images/storeBj.png" class="storeBJ"></image>
+      <view class="storeBanner">
+          <view class="storeLogo" wx:if="{{logo==''?false:true}}">
+        <image src="{{'https://api.joinsilk.com//File/download?id='+logo}}" class="storelogo"></image>    
+       </view>
+        <view class="storeLogo" wx:if="{{logo==''?true:false}}">
+        <image src="../../pages/images/iconpic.png" class="storelogo"></image>  
+       </view>
+       <view class="storeCenter">
+           <view class="storeText">
+            {{name}}
+          </view>
+          <view class="storeItem">
+           主营:{{keywordNames}}
+         </view>
+         <view class="storePhone">
+          <view class="storeQU"><image src="../../pages/images/storeAddress.png" class="storeAddress"></image> <text class="storeQU">{{contactAddress}}</text>  <text class="storeQU"></text></view>
+         </view>
+      </view>
+       <view class="storeRight" bindtap="callphone" data-postid="{{linkTel}}">
+          <view class="storeName"><image src="../../pages/images/storePhone.png" class="storemail"></image>  {{linkMan}}</view>
+   </view>
+ </view>
+</view>
+<!-- 中间内容 -->
+<view class="storeMain">
+    <view class="commodity">
+        所有商品
+    </view>
+  
+    <!--需要循环的商品-->
+     <view class="advertising" wx:for="{{storegoods}}" wx:for-index="idx" wx:for-item="itemList" bindtap="Detailpage" data-goodsid="{{itemList.id}}">
+          <view>
+          <image src="{{'https://api.joinsilk.com//File/download?id='+itemList.resourceId}}" class="storeItem1"></image>
+          <!-- <image src="../../pages/images/storeItem.png" class="storeItem1"></image> -->
+          </view>
+          <view class="advertisingText">{{itemList.name}}</view>
+           <text class="advertPrice">￥{{itemList.price}}</text>
+           <text class="advertqi">{{itemList.meterName}}</text>
+     </view>
+  </view>
+  <view style="clear:both"></view>
+<!--回到顶部的html  -->
+<view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+            <view class="icon-gotop">
+                置顶
+            </view>
+</view>
+   <view style="clear:both"></view>
+ <view class="tips1">
+      <view wx:if="{{hasMore}}" style="margin-left:300rpx;">
+      <image src="../../pages/images/loading.gif" class="gifloding"></image>
+       <text style="font-size:28rpx;" class="gifText">玩命的加载中...</text>
+      </view>
+      <view wx:if="{{hasNOne}}"><text style="font-size:28rpx;color:#999;margin-left:300rpx;">没有更多内容了</text></view>
+    </view>
+   </view>
+</scroll-view>

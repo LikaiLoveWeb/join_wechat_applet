@@ -1,0 +1,68 @@
+<view class="Sortcontainer">
+  <view class="nav_left">
+  <!--商品分类的侧边栏  -->
+    <view class="top-tab flex-wrp flex-tab">
+      <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" 
+      wx:for="{{listleft}}" wx:for-index="idx" data-index="{{idx}}" wx:for-item="itemName" data-idx="{{itemName.id}}"
+       bindtap="switchTab">
+        {{itemName.name}}
+       </view>
+      </view>
+  </view>
+  <view class="nav_right">
+    <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+        <!--商品分类的广告位  -->
+         <view class="SortImg"> 
+          <image src="{{'https://api.joinsilk.com//File/download?id='+resourceId}}"class="sild_Img"></image>    
+          <!-- <image src="../../pages/images/sortImg.png" class="sild_Img"></image>   -->
+          </view>
+         <!--需要循环分类的信息-->
+         <view class="Itemlist" wx:for="{{newMoreRightList}}" wx:for-index="idx" wx:for-item="ItemList" bindtap="classification" data-nameid="{{ItemList.parentId}}" data-twonameid="{{ItemList.id}}" data-url="{{ItemList.url}}" data-index="{{idx}}">
+           <image src="{{'https://api.joinsilk.com//File/download?id='+ItemList.wxPicture}}" class="sortItem"></image>     
+            <!-- <view wx:if="{{ItemList.wxPicture==''?true:false}}"><image src="../../pages/images/storeLogo1.png" class="sortItem"></image></view>   -->
+            <view class="text">{{ItemList.name}}</view> 
+        </view>
+         
+      </view>
+    <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+          <!--商品分类的广告位  -->
+         <view class="SortImg"> 
+          <image src="{{'https://api.joinsilk.com//File/download?id='+resourceId}}"class="sild_Img"></image>    
+          <!-- <image src="../../pages/images/sortImg.png" class="sild_Img"></image>   -->
+          </view>
+         <!--需要循环分类的信息-->
+         <view class="Itemlist" wx:for="{{newMoreRightList}}" wx:for-index="idx" wx:for-item="ItemList" bindtap="classification" data-nameid="{{ItemList.parentId}}" data-twonameid="{{ItemList.id}}" data-url="{{ItemList.url}}" data-index="{{idx}}">
+           <image src="{{'https://api.joinsilk.com//File/download?id='+ItemList.wxPicture}}" class="sortItem"></image>   
+             <!-- <image src="../../pages/images/storeLogo1.png" class="sortItem"></image>  -->
+            <view class="text">{{ItemList.name}}</view> 
+        </view>
+    </view>
+    <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}" >
+         <!--商品分类的广告位  -->
+         <view class="SortImg"> 
+          <image src="{{'https://api.joinsilk.com//File/download?id='+resourceId}}"class="sild_Img"></image>    
+          <!-- <image src="../../pages/images/sortImg.png" class="sild_Img"></image>   -->
+          </view>
+         <!--需要循环分类的信息-->
+         <view class="Itemlist" wx:for="{{newMoreRightList}}" wx:for-index="idx" wx:for-item="ItemList" bindtap="classification" data-nameid="{{ItemList.parentId}}" data-twonameid="{{ItemList.id}}" data-url="{{ItemList.url}}" data-index="{{idx}}">
+           <image src="{{'https://api.joinsilk.com//File/download?id='+ItemList.wxPicture}}" class="sortItem"></image>   
+             <!-- <image src="../../pages/images/storeLogo1.png" class="sortItem"></image>  -->
+            <view class="text">{{ItemList.name}}</view> 
+        </view>
+     </view>
+
+    <view class="ctnt3 placehold" hidden="{{currentNavtab==3 ? '' : true}}" >
+         <!--商品分类的广告位  -->
+         <view class="SortImg"> 
+          <image src="{{'https://api.joinsilk.com//File/download?id='+resourceId}}"class="sild_Img"></image>    
+          <!-- <image src="../../pages/images/sortImg.png" class="sild_Img"></image>   -->
+          </view>
+         <!--需要循环分类的信息-->
+         <view class="Itemlist" wx:for="{{newMoreRightList}}" wx:for-index="idx" wx:for-item="ItemList" bindtap="classification" data-nameid="{{ItemList.parentId}}" data-twonameid="{{ItemList.id}}" data-url="{{ItemList.url}}" data-index="{{idx}}">
+           <image src="{{'https://api.joinsilk.com//File/download?id='+ItemList.wxPicture}}" class="sortItem"></image>   
+             <!-- <image src="../../pages/images/storeLogo1.png" class="sortItem"></image>  -->
+            <view class="text">{{ItemList.name}}</view> 
+        </view>
+    </view>
+</view>
+</view>

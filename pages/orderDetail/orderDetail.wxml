@@ -1,0 +1,187 @@
+
+<!-- 订单详情 -->
+
+<!-- 订单详情  头部-->
+<view class="orderDetailTop">
+        <view class="orDeTo1">{{payStatus}}<text style="margin-left:20rpx;">{{cancelReason}}</text></view>
+        <view class="orDeTo2">应付金额:<text>￥{{realMoney}}</text></view>
+        <view class="orDeTo2">订单编号:<text>{{orderId}}</text></view>
+        <view class="orDeTo2">下单时间:<text>{{createTime}}</text></view>
+        <!-- <view class="orDeTo3">提醒:<text>退货/退款请到电脑上操作</text></view> -->
+</view>
+
+
+<!-- 订单详情  中间部分-->
+<view class="orderDeBan"></view>
+<!--取消订单  去付款   按钮框  -->
+ <view wx:if="{{isCancelOrder}}">
+        <view class="orderDetailCenter">
+              <view class="orderDeCenBox">
+                      <view class="goOrderMon" bindtap="cacelTap">取消订单</view>
+                      <view class="cancelOrder" bindtap="goPayMon">去付款</view> 
+              </view>
+      </view>  
+      <view class="orderDeBan"></view>
+</view> 
+  
+<!--  确认收货  按钮框  -->
+  <view wx:if="{{isSureShopShow}}">
+   <view class="orderDetailCenter">
+        <view class="orderDeCenBox">
+                  <view class="cancelOrder" bindtap="sureShopTap">确认收货</view>  
+        </view>
+  </view>   
+  <view class="orderDeBan"></view>
+</view>  
+
+
+<!--订单详情  收货地址  -->
+
+<view class="orderDetailAddBox">
+        <view class="orderAdd1">
+              <image src="../images/orderDetailAdd.png" class="orderImage1"></image>
+              <text class="orderPerson  orderPerson11">收货人:</text>
+              <text class="orderPerson">{{consigneeName}}</text>
+                <text class="orderPhone">{{consigneeLinkTel}}</text>
+        </view>
+
+        <view class="orderAdd2">
+                    <text class="orderPerson orderPer2 orderPer33">地址:</text>
+                    <text class="orderPerson orderPer33">{{getGoodAdd}}</text>         
+         </view>
+
+        <view class="orderAdd3">
+                    <text class="orderPerson orderPer2 orderPer33">邮编:</text>
+                    <text class="orderPerson orderPer33">{{consigneePostCode}}</text>         
+          </view>
+
+</view>
+
+<!--买家留言  -->
+<view class="orderDetailAddBox orderDetailAddBox2">
+        <view class="orderAdd1">
+              <image src="../images/orderDetailMess.png" class="orderImage2"></image>
+              <text class="orderPerson  orderPerson11">买家留言:</text>
+        </view>
+
+        <view class="orderAdd2 orderAdd333">
+                    <text class="orderPerson orderPer33">{{buyerMessage}}</text>         
+         </view>
+</view>
+
+<view class="orderDeBan"></view>
+<!--店铺 和商品信息  -->
+<view class="storeShopInfo">
+    <view class="storeShopInfoCon">
+    <!--店铺名称  -->
+          <view class="shopNmaeBox">
+                  <image src="../images/orderDetailStore.png"  class="shopImageLogo"></image>
+                  <text class="shopNameLo">{{storeName}}</text>
+          </view>
+    
+ 
+      <!--商品信息 ------------------------------------- -->
+     <view class="shopDetaBox" wx:for="{{shopInfoArr}}" wx:for-index="idx" wx:for-item="itemName" bindtap="detailgood" data-goodid="{{itemName.goodsId}}">
+          <!--商品主图  -->
+          <view class="shopImagessLogo">
+                <image src="{{'https://api.joinsilk.com//File/download?id='+itemName.goodsPic}}"  class="shoogoSty"></image>
+          </view>
+          <!-- 商品标题 和规格 -->
+          <view class="shopImagessLogo22">
+                  <view class="shopInTitle">{{itemName.goodsName}}</view>
+                  <!--规格  -->
+                   <view class="shopReBPX">
+                         <view class="shopInfoRegualrBox" wx:for="{{itemName.goodsStandardOfferJson}}" wx:for-index="idx2" wx:for-item="itemName2" >
+                              <text>{{itemName2.key}}:</text><text>{{itemName2.value}}</text>
+                          </view> 
+                  </view> 
+                   <!--数量和价格  -->
+                  <view class="shopPriceNum">
+                        <view class="shopInfoRegualrBox" style="width:200rpx;">
+                              <text>x{{itemName.dealNum}}件</text>
+                          </view>
+                          <view class="shopInfoRegualrBox" style="width:242rpx;text-align:right">
+                              <text class="shopPr">￥{{itemName.dealUnitPrice}}</text>
+                          </view>
+                  </view>
+
+          </view>
+    </view>
+
+        <!--商品总额  -->
+
+        <view class="shopSumMoe"><text>商品总额：</text><text>￥{{originalPrice}}</text></view>
+        <view class="shopSumMoe"><text>卖家修改：</text><text>￥{{changePrice}}</text></view>
+        <view class="shopSumMoe"><text>运费：</text><text>￥{{freightPrice}}</text></view>
+        <view class="shopSumMoe shopSumMoe22"><text>优惠券：</text><text>￥{{couponsFace}}</text></view>
+
+
+        
+  </view>
+</view>
+<!--确认收货  -->
+
+ <view class="orderShade" wx:if="{{suewGetGood}}">
+      <view class="shadeBox">
+            <view class="shadeBoxTop">是否确认收货？</view>
+            <view class="shadeBoxBut">
+                  <view class="shadeBoxCan" bindtap="hideBox">取消</view>
+                  <view class="shadeBoxYes" bindtap="showBoxBut">确定</view>
+              </view>
+      </view>
+</view> 
+<!--取消订单  -->
+
+<view class="orderShade" wx:if="{{cancelOrder}}">
+      <view class="shadeBox">
+            <view class="shadeBoxTop">确定取消此订单？</view>
+            <view class="shadeBoxBut">
+                  <view class="shadeBoxCan" bindtap="canHideBox">取消</view>
+                  <view class="shadeBoxYes" bindtap="canYesBut">确定</view>
+              </view>
+      </view>
+</view>
+
+
+
+<!--底部栏  -->
+ <!-- <view class="top-tab flex-wrp flex-tab " >
+      <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{userListInfo}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+        {{itemName}}
+       </view>
+  </view> -->
+<!-- <view class="bottomBox top-tab">
+      <view class="bottomIndex toptab flex-item {{currentNavtab==idx ? 'active' :'' }}"  wx:for="{{userListInfo}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+          <view class="classname">
+                <view class=""><image src="{{icon1}}" class="bottImages"></image></view>
+                <view class="bottomFont">{{itemName.text}}</view>
+          </view>
+      </view>
+</view> -->
+
+<!-- <view class="bottomBox">
+      <view class="bottomIndex"  bindtap="switchTab1">
+          <view class="classname">
+                <view class=""><image src="../../pages/images/homeIndexImage2.png" class="bottImages"></image></view>
+                <view class="bottomFont" style="color:#6e08a8;">首页</view>
+          </view>
+      </view>
+       <view class="bottomIndex"  bindtap="switchTab2">
+          <view class="classname">
+                <view class=""><image src="../../pages/images/moreClassImages1.png" class="bottImages"></image></view>
+                <view class="bottomFont">分类</view>
+          </view>
+      </view>
+       <view class="bottomIndex"  bindtap="switchTab3">
+          <view class="classname">
+                <view class=""><image src="../../pages/images/indexCar1.png" class="bottImages"></image></view>
+                <view class="bottomFont">购物车</view>
+          </view>
+      </view>
+       <view class="bottomIndex" bindtap="switchTab4">
+          <view class="classname">
+                <view class=""><image src="../../pages/images/myHomeIndex1.png" class="bottImages"></image></view>
+                <view class="bottomFont">我的</view>
+          </view>
+      </view>
+</view> -->

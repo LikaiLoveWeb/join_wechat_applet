@@ -1,0 +1,85 @@
+ <scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}"   bindscroll="scroll" bindscrolltolower= "scrolltolower" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+<view class="indexTopClass">
+    <image src="../images/indexTopImage.png" class="indexTopImage"></image>
+</view>
+
+<!--部分广告图  -->
+<view class="bannerBoxIndex">
+  <block wx:for="{{indexAdvList}}" wx:for-index="idx" wx:for-item="itemName">
+
+    <view class="banneIndex1Box" data-url="{{itemName.url}}" bindtap="goUrl" data-twonameid="{{itemName.nameID}}" data-index="{{itemName.index}}">
+         <view class="banneIndex1">
+                <image src="{{'https://api.joinsilk.com//File/download?id='+itemName.resourceId}}" class="banImges"></image>  
+          </view>
+          <view class="listClassName">{{itemName.name}}</view>
+      </view>
+  
+  </block>
+      
+       <!--更多分类  -->
+         <view class="banneIndex1Box" bindtap="goMoreClass">
+         <view class="banneIndex1">
+                <image src="../images/indexMoreImage.png" class="banImges" bindtap="orderChange"></image>  
+          </view>
+          <view class="listClassName">更多分类</view>
+      </view>
+  </view>
+
+
+  <!--分割线  -->
+
+<view class="indexFenGe" style="clear:both"></view>
+
+<!--精品推荐  -->
+<view class="recommedBox">
+<!-- 精品推荐 top部分 -->
+        <view class="recommedTopBox">
+          <view class="recommImageBox">
+                <image src="../images/recommedImge.png" style="width:295rpx;height:28rpx;"></image>
+          </view> 
+        </view>
+
+  <!-- 内容部分 -->
+        <view class="recommedContentBox"  bindtap="goShopDetail"  wx:for="{{indexReco}}" wx:for-index="idx" wx:for-item="itemName" data-detailUrl="{{itemName.goodsId}}">
+              <view class="recommedContent">
+                    <!--商品主图  -->
+                        <view class="recommedContentImg">
+                            <image src="{{'https://api.joinsilk.com//File/download?id='+itemName.picAddress}}"     class="indexShopImage"  ></image>
+                        </view>
+                        <!--商品信息  -->
+                        <view class="recommedContenMess">
+                                      <view class="recommTItle">{{itemName.goodsName}}</view>
+                                      <view class="recommRegular">
+                                              <view class="recommRe"><text>{{itemName.orderMin}}</text><text>{{itemName.unitName}}</text>起批</view>
+                                              <view class="recommAddress">{{itemName.cityName}}</view>
+                                      </view>
+                                       <view class="recommPrice">￥{{itemName.goodsPrice
+}}</view>
+                          </view>
+                  
+                    </view>
+            </view>    
+ </view>
+
+<!--回到顶部的html  -->
+
+<view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+       <view class="icon-gotop">
+             <image src="../../pages/images/topGO.png" style="width:30rpx;height:30rpx;" class="topImg"></image>
+                <view>置顶</view>
+            </view>
+</view>
+<view class="tips1" style="margin:20rpx 0;">
+      <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+       <image src="../../pages/images/loading.gif" class="gifloding"></image>
+       <text style="font-size:28rpx;margin-left:10rpx;color:#999">玩命的加载中...</text>
+      </view>
+      <view wx:if="{{hasNOne}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;"><text style="font-size:28rpx;color:#999999">没有更多内容了</text></view>
+    </view>
+</scroll-view>
+
+
+
+
+
+

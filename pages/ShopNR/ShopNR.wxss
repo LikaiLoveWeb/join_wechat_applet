@@ -1,0 +1,431 @@
+.SlideBox{
+  width: 100%;
+  height: 800rpx;
+  overflow: hidden;
+}
+.ScrollNav{
+  width: 100%;
+  height: 603px;
+  overflow-y: auto;
+  background: #f5f5f5
+}
+.SlideBox .slide-image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.ShopFidexService{
+  position: relative
+}
+.ShopFidexService .ContactBtn{
+  font-size: 22rpx;
+  position: absolute;
+  top: 0rpx;left: 0rpx;
+  text-align: center;
+  color: #737373;
+  width: 100%;
+  height: 100%;
+  opacity: 0
+}
+/* 内容 */
+.Shop-Con-Box{
+  width: 100%;
+  height: 1200rpx;
+  background: #f5f5f5;
+  overflow-y: auto;
+}
+.clear{
+  clear: both;
+}
+.ViewImgList{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+}
+.ViewImgList image{
+  width: 100%;
+  display: block;
+}
+.ShopCon-Cen{
+  width: 93%;
+  margin: 19rpx auto 0 auto;
+  height: 108rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.ShopConTitle{
+  width: 100%;
+  height: auto;
+  background: white;
+  float:left;
+}
+.Shop-price-Num{
+  width: 100%;
+  height: auto;
+  background: white;
+}
+.Shop-require{
+  width: 57rpx;
+  height: 27rpx;
+  background: #ffa033;
+  font-size: 22rpx;
+  color:white;
+  line-height: 27rpx;
+  text-align: center;
+  float:left;
+  margin: 12rpx 14rpx 0 0;
+}
+.ShopCon-Cen .supplyTypeClass{
+  background: #e30246;
+}
+.TitleName{
+  color:#333333;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.ShopPrice-Cen{
+  width: 93%;
+  height: 110rpx;
+  margin: 10rpx auto 0 auto;
+  border-bottom: 1rpx #e0e0e0 solid;
+}
+.ShopPriceCon{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.LeftPriceSingle{
+  width: 100%;
+  overflow: hidden;
+}
+.LeftPriceSingle text{
+  color:#6e08a8;
+   float:left;
+}
+.LeftPriceSingle .PriceSymbol{
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+.LeftPriceSingle .PriceNumber{
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-right: 16rpx;
+}
+.LeftPriceSingle .PriceType{
+      width: 62rpx;
+      height: 24rpx;
+      line-height: 24rpx;
+      text-align: center;
+      border: 1rpx solid #6e08a8;
+      font-size: 16rpx;
+      margin-top: 10rpx;
+}
+.LeftPriceNum{
+  width: 100%;
+  font-size: 22rpx;
+  color:#737373;
+  margin-top: 10rpx;
+}
+.Shop-site{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.Shop-SiteCon{
+  width: 93%;
+  margin: 0 auto;
+}
+.freight{
+  float: left;
+  font-size: 22rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.freight text:nth-child(1){
+  color:#b8b8b8;
+  margin-right: 25rpx;
+}
+.freightSite{
+   font-size: 22rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: right;
+}
+.freightSite text:nth-child(1){
+  color:#b8b8b8;
+  margin-right: 25rpx;
+}
+.Shop-attribute{
+  width: 100%;
+  background: white;
+  height: 132rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  float: left;
+}
+.attributeBox{
+  width: 93%;
+  margin: 0 auto;
+}
+.attributeColor{
+  height: 65rpx;
+  line-height: 65rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  font-size: 22rpx;
+  color:#666666;
+}
+.attributeColor text:nth-child(1){
+    color:#999999;
+    margin-right: 23rpx;
+}
+.attributeColor .ArrowsImg{
+  display: block;
+  float:right;
+  width: 20rpx;
+  height: 12rpx;
+  margin-top: 29rpx;
+}
+.attributeT{
+  height: 65rpx;
+  line-height: 65rpx;
+  color:#666666;
+  font-size: 22rpx;
+}
+.attributeT .attributeArrows{
+   display: block;
+  float:right;
+  width: 20rpx;
+  height: 12rpx;
+  margin-top: 29rpx;
+}
+.StoreMsg{
+  width: 100%;
+  background: white;
+  height: 144rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.StoreMsgAuto{
+  width: 93%;
+  margin: 28rpx auto 0 auto;
+  overflow: hidden
+}
+.StoreMsgLogo{
+  float: left;
+  position: relative;
+}
+.StoreMsgLogo .StoreLogoImage{
+   width: 86rpx;
+   height: 86rpx;
+   display: block;
+   float:left;
+   margin-right: 24rpx;
+}
+.StoreMsgLogo text{
+    color:#333333;
+    font-size: 28rpx;
+    margin-top: 16rpx;
+}
+.StoreMsgLogo .satisficingImg{
+  width: 126rpx;
+  height: 20rpx;
+  display: block;
+  position: absolute;
+  top: 60rpx;
+  right:155rpx;
+}
+.StoreBtn{
+  float:right;
+  width: 162rpx;
+  height: 48rpx;
+  border: 1rpx solid #9d9d9d;
+  border-radius: 5rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color:#666666;
+  font-size:24rpx;
+  margin-top: 19rpx;
+}
+.ShopFidexBox{
+  width: 100%;
+  height: 88rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.ShopFidexService{
+    width: 24%;
+    float: left;
+    height: 88rpx;
+    border-top:1rpx solid #e0e0e0;
+    border-right:1rpx solid #e0e0e0;
+    background: white
+}
+.ShopFidexStore{
+   width: 25%;
+  float: left;
+  height: 88rpx;
+   border-top:1rpx solid #e0e0e0;
+    background: white
+}
+.ShopFidexBox image{
+display: block;
+  width: 38rpx;
+  height: 35rpx;
+  margin: 13rpx auto 6rpx auto;
+}
+.ShopFidexBox text{
+  font-size: 22rpx;
+  color:#737373;
+  text-align: center;
+  display: block
+}
+.ShopFidexBox .ShopFidexBtn{
+  width: 50.7%;
+  line-height: 88rpx;
+  height: 88rpx;
+  background: #6e08a8;
+  color: white;
+  font-size: 32rpx;
+  float: left;
+  text-align: center;
+}
+/* 商品信息 */
+
+.ShopMessage {
+  width: 100%;
+  height: 144rpx;
+  background: white;
+  margin-top: 20rpx;
+  overflow: hidden
+}
+
+.ShopMessageLogo {
+  float: left;
+  margin-top: 28rpx;
+  margin-right: 24rpx;
+  height: 116rpx;
+  width: 70%;
+}
+
+.MessageLogo {
+  width: 86rpx;
+  height: 86rpx;
+  float: left;
+  margin-right: 24rpx;
+}
+
+.MessageLogo image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.MessageLogoBox {
+  float: left;
+  margin-top: 16rpx;
+  width: 70%;
+}
+
+.MessageLogoTitle {
+  color: #333;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ShopMain {
+  width: 93%;
+  margin: 0 auto;
+}
+.MessageLogoImg {
+  width: 126rpx;
+  height: 20rpx;
+  margin-top: 10rpx;
+}
+
+.MessageLogoImg image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ShopMessageBtn {
+  float: right;
+  width: 162rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border: 1rpx solid #9d9d9d;
+  color: #666;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 48rpx;
+}
+
+
+/* 商品属性 */
+.ShoppingTypeFidex{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 1993;
+}
+.ShoppingTypeMain{
+  width: 100%;
+  height: 680rpx;
+  background: white;
+  overflow-y: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.ShoppingTypeAuto{
+  width: 93%;
+  margin: 0 auto;
+}
+.ShoppingTypeTitle{
+  text-align: center;
+  margin-top: 24rpx;
+  color:#707070;
+  font-size: 32rpx;
+}
+.ShoppingTypeType{
+  width: 100%;
+  margin-top: 5rpx;
+  height: auto;
+  overflow-y: auto;
+}
+.ShoppingTypeFor{
+  width: 100%;
+  height: 74rpx;
+  line-height: 74rpx;
+  border-bottom: 1rpx solid #ededed;
+  color:#7b7b7b;
+  font-size: 28rpx;
+}
+.ShoppingTypeFor text{
+  width: 50%;
+  float: left;
+}
+.TypeFidexBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #6e08a8;
+  color:white;
+  font-size: 32rpx;
+}
+.ShopDetails{
+  width: 100%;
+  padding-bottom: 76rpx;
+  height: auto;
+  margin-top: 20rpx;
+  background: #fff
+}

@@ -1,0 +1,250 @@
+<!--logs.wxml-->
+<scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}"   bindscroll="scroll" bindscrolltolower= "scrolltolower" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+<view class="orderController">
+  <view class="top-tab flex-wrp flex-tab">
+  <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" data-index="{{idx}}" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+    {{itemName}}
+  </view>
+</view>
+<view class="containerMain withtab">
+    <!-- 全部的商品 -->
+  <view class="ctnt0" hidden="{{currentNavtab==0 ? '' : true}}">
+  <!--需要循环的商品  -->
+      <view class="ordermainlist" wx:for="{{orderlistArr}}" wx:for-index="idx" wx:for-item="orderItem">
+       <!--商品详情的内容  -->
+        <view class="orderPageslist">
+        <!--商品头部信息  -->
+            <view class="orderPagesText">
+              <image src="../../pages/images/orderlogo.png" class="orderlogo"></image>
+              <view class="orderStore">{{orderItem.sellerCompanyName}}</view>
+               <text class="orderTime">{{orderItem.createTime}}</text>
+                <text class="orderstatus">{{orderItem.statusStr}}</text>
+          </view>
+          <!--商品中间的内容  -->
+         <view class="orderShop" wx:for="{{orderItem.orderDetails}}" wx:for-index="idx1" wx:for-item="Itemlist">
+              <view class="ordershoplogo">
+               <image src="{{'https://api.joinsilk.com//File/download?id='+Itemlist.goodsPic}}" class="storeLogo1" bindtap="silkShop" data-goodsid="{{Itemlist.goodsId}}"></image>  
+                <!-- <image src="../../pages/images/storeLogo1.png" class="storeLogo1"></image> -->
+              </view>
+            <view class="orderleft">
+                <view class="merchandise">{{Itemlist.goodsName}}</view>
+
+               <view class="specification" wx:for="{{orderItem.orderDetails[idx1].goodsStandardOfferJson}}" wx:for-index="idx2" wx:for-item="Itemlist2">
+                   <text>{{Itemlist2.key}}</text>:<text>{{Itemlist2.value}}</text>
+              </view>
+
+               <view class="commodities">
+                  <view class="measurement">x{{Itemlist.dealNum}}件</view>
+                   <view class="orderNum">￥{{Itemlist.dealUnitPrice}}</view>
+              
+              </view>
+            </view>
+        </view>
+       <!--商品结算  -->
+        <view class="orderMun">
+            <text class="orderMunshop">共{{orderItem.totalSupply}}件商品</text>
+            <text class="actualpayment">实付款:</text>
+            <text class="actualprice">￥{{orderItem.totalMoney}}</text>
+      </view>
+      <!--查看详情  -->
+      <view class="details">
+       <view class="detailspayment" bindtap="cheakMoney" wx-if="{{orderItem.status==0?true:false}}" data-fuid="{{orderItem.id}}"> 去付款</view>
+       <view class="detailspayment" bindtap="confirm" wx-if="{{orderItem.status==2?true:false}}" data-conid="{{orderItem.id}}">确认收货</view>
+        <view class="detailsText" data-postid="{{orderItem.id}}" bindtap="cheakdetal"> 查看详情</view>
+        </view> 
+        <!--确认收货  -->
+      <view class="orderShade" wx:if="{{confirmFn}}">
+            <view class="shadeBox">
+                  <view class="shadeBoxTop">是否确认收货？</view>
+                  <view class="shadeBoxBut">
+                        <view class="shadeBoxCan" bindtap="hideBox">取消</view>
+                        <view class="shadeBoxYes" bindtap="showBoxBtn">确定</view>
+                    </view>
+            </view>
+      </view>  
+    </view>
+</view>
+  <!-- 暂无数据出现的div-->
+    <view class="orderNone" wx:if="{{orderlistArr==''?true:false}}">
+        <view class="ordernoneImg">
+            <image src="../../pages/images/orderNone.png" class="noneImg"></image>
+        </view>
+    </view>
+</view>
+  <!-- 待付款 -->
+  <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+       <!--需要循环的商品  -->
+      <view class="ordermainlist" wx:for="{{orderlistArr}}" wx:for-index="idx" wx:for-item="orderItem">
+       <!--商品详情的内容  -->
+        <view class="orderPageslist">
+        <!--商品头部信息  -->
+            <view class="orderPagesText">
+              <image src="../../pages/images/orderlogo.png" class="orderlogo"></image>
+              <text class="orderStore">{{orderItem.sellerCompanyName}}</text>
+               <text class="orderTime">{{orderItem.createTime}}</text>
+                <text class="orderstatus">{{orderItem.statusStr}}</text>
+          </view>
+          <!--商品中间的内容  -->
+         <view class="orderShop" wx:for="{{orderItem.orderDetails}}" wx:for-index="idx1" wx:for-item="Itemlist">
+              <view class="ordershoplogo">
+               <image src="{{'https://api.joinsilk.com//File/download?id='+Itemlist.goodsPic}}" bindtap="silkShop" data-goodsid="{{Itemlist.goodsId}}" class="storeLogo1"></image>  
+                <!-- <image src="../../pages/images/storeLogo1.png" class="storeLogo1"></image> -->
+              </view>
+            <view class="orderleft">
+                <view class="merchandise">{{Itemlist.goodsName}}</view>
+
+                <view class="specification" wx:for="{{orderItem.orderDetails[idx1].goodsStandardOfferJson}}" wx:for-index="idx2" wx:for-item="Itemlist2">
+                   <text>{{Itemlist2.key}}</text>:<text>{{Itemlist2.value}}</text>
+              </view>
+
+               <view class="commodities">
+                  <view class="measurement">x{{Itemlist.dealNum}}件</view>
+                   <view class="orderNum">￥{{Itemlist.dealUnitPrice}}</view>
+              
+              </view>
+            </view>
+        </view>
+       <!--商品结算  -->
+        <view class="orderMun">
+            <text class="orderMunshop">共{{orderItem.totalSupply}}件商品</text>
+            <text class="actualpayment">实付款:</text>
+            <text class="actualprice">￥{{orderItem.totalMoney}}</text>
+      </view>
+      <!--查看详情  -->
+      <view class="details">
+       <view class="detailspayment" bindtap="cheakMoney" wx-if="{{orderItem.status==0?true:false}}" data-fuid="{{orderItem.id}}"> 去付款</view>
+        <view class="detailsText" bindtap="cheakdetal" data-postid="{{orderItem.id}}"> 查看详情</view>
+      </view>  
+    </view>
+  </view>
+  <!-- 暂无数据出现的div-->
+    <view class="orderNone" wx:if="{{orderlistArr==''?true:false}}">
+        <view class="ordernoneImg">
+            <image src="../../pages/images/orderNone.png" class="noneImg"></image>
+        </view>
+    </view>
+  </view>
+  <!-- 待收货 -->
+  <view class="ctnt2 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
+       <!--需要循环的商品  -->
+      <view class="ordermainlist" wx:for="{{orderlistArr}}" wx:for-index="idx" wx:for-item="orderItem">
+       <!--商品详情的内容  -->
+        <view class="orderPageslist">
+        <!--商品头部信息  -->
+            <view class="orderPagesText">
+              <image src="../../pages/images/orderlogo.png" class="orderlogo"></image>
+              <text class="orderStore">{{orderItem.sellerCompanyName}}</text>
+               <text class="orderTime">{{orderItem.createTime}}</text>
+                <text class="orderstatus">{{orderItem.statusStr}}</text>
+          </view>
+          <!--商品中间的内容  -->
+         <view class="orderShop" wx:for="{{orderItem.orderDetails}}" wx:for-index="idx1" wx:for-item="Itemlist">
+              <view class="ordershoplogo">
+               <image src="{{'https://api.joinsilk.com//File/download?id='+Itemlist.goodsPic}}" bindtap="silkShop" data-goodsid="{{Itemlist.goodsId}}"  class="storeLogo1"></image>  
+                <!-- <image src="../../pages/images/storeLogo1.png" class="storeLogo1"></image> -->
+              </view>
+            <view class="orderleft">
+                <view class="merchandise">{{Itemlist.goodsName}}</view>
+
+               <view class="specification" wx:for="{{orderItem.orderDetails[idx1].goodsStandardOfferJson}}" wx:for-index="idx2" wx:for-item="Itemlist2">
+                   <text>{{Itemlist2.key}}</text>:<text>{{Itemlist2.value}}</text>
+              </view>
+
+               <view class="commodities">
+                  <view class="measurement">x{{Itemlist.dealNum}}件</view>
+                   <view class="orderNum">￥{{Itemlist.dealUnitPrice}}</view>
+              
+              </view>
+            </view>
+        </view>
+       <!--商品结算  -->
+        <view class="orderMun">
+            <text class="orderMunshop">共{{orderItem.totalSupply}}件商品</text>
+            <text class="actualpayment">实付款:</text>
+            <text class="actualprice">￥{{orderItem.totalMoney}}</text>
+      </view>
+      <!--查看详情  -->
+      <view class="details">
+      <view class="detailspayment" bindtap="confirm" wx-if="{{orderItem.status==2?true:false}}" data-conid="{{orderItem.id}}">确认收货</view>
+        <view class="detailsText" bindtap="cheakdetal" data-postid="{{orderItem.id}}"> 查看详情</view>
+      </view>  
+    </view>
+  </view>
+  <!-- 暂无数据出现的div-->
+    <view class="orderNone" wx:if="{{orderlistArr==''?true:false}}">
+        <view class="ordernoneImg">
+            <image src="../../pages/images/orderNone.png" class="noneImg"></image>
+        </view>
+    </view>
+  <!--确认收货  -->
+<view class="orderShade" wx:if="{{confirmFn}}">
+            <view class="shadeBox">
+                  <view class="shadeBoxTop">是否确认收货？</view>
+                  <view class="shadeBoxBut">
+                        <view class="shadeBoxCan" bindtap="hideBox">取消</view>
+                        <view class="shadeBoxYes" bindtap="showBoxBtn">确定</view>
+                    </view>
+            </view>
+      </view>  
+  </view>
+  <!--交易成功-->
+    <view class="ctnt3 placehold" hidden="{{currentNavtab==3 ? '' : true}}">
+       <!--需要循环的商品  -->
+          <view class="ordermainlist" wx:for="{{orderlistArr}}" wx:for-index="idx" wx:for-item="orderItem">
+          <!--商品详情的内容  -->
+            <view class="orderPageslist">
+            <!--商品头部信息  -->
+                <view class="orderPagesText">
+                  <image src="../../pages/images/orderlogo.png" class="orderlogo"></image>
+                  <text class="orderStore">{{orderItem.sellerCompanyName}}</text>
+                  <text class="orderTime">{{orderItem.createTime}}</text>
+                    <text class="orderstatus">{{orderItem.statusStr}}</text>
+              </view>
+              <!--商品中间的内容  -->
+            <view class="orderShop" wx:for="{{orderItem.orderDetails}}" wx:for-index="idx1" wx:for-item="Itemlist">
+                  <view class="ordershoplogo">
+                  <image src="{{'https://api.joinsilk.com//File/download?id='+Itemlist.goodsPic}}" bindtap="silkShop" data-goodsid="{{Itemlist.goodsId}}"  class="storeLogo1"></image>  
+                    <!-- <image src="../../pages/images/storeLogo1.png" class="storeLogo1"></image> -->
+                  </view>
+                <view class="orderleft">
+                    <view class="merchandise">{{Itemlist.goodsName}}</view>
+
+                  <view class="specification" wx:for="{{orderItem.orderDetails[idx1].goodsStandardOfferJson}}" wx:for-index="idx2" wx:for-item="Itemlist2">
+                   <text>{{Itemlist2.key}}</text>:<text>{{Itemlist2.value}}</text>
+              </view>
+              <view class="commodities">
+                      <view class="measurement">x{{Itemlist.dealNum}}件</view>
+                      <view class="orderNum">￥{{Itemlist.dealUnitPrice}}</view>
+                  
+                  </view>
+                </view>
+            </view>
+          <!--商品结算  -->
+            <view class="orderMun">
+                <text class="orderMunshop">共{{orderItem.totalSupply}}件商品</text>
+                <text class="actualpayment">实付款:</text>
+                <text class="actualprice">￥{{orderItem.totalMoney}}</text>
+          </view>
+          <!--查看详情  -->
+          <view class="details">
+            <view class="detailsText" bindtap="cheakdetal" data-postid="{{orderItem.id}}"> 查看详情</view>
+          </view>  
+    </view>
+</view>
+<!-- 暂无数据出现的div-->
+    <view class="orderNone" wx:if="{{orderlistArr==''?true:false}}">
+        <view class="ordernoneImg">
+            <image src="../../pages/images/orderNone.png" class="noneImg"></image>
+        </view>
+    </view>
+</view>
+</view>
+</view>
+<!--回到顶部的html  -->
+<view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+            <view class="icon-gotop">
+            <image src="../../pages/images/topGO.png" style="width:30rpx;height:30rpx;" class="topImg"></image>
+                置顶
+            </view>
+      </view>
+</scroll-view>

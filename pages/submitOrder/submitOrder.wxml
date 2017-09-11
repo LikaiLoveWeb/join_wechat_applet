@@ -1,0 +1,161 @@
+<!-- 头部隔断 -->
+<import src="../../toast/toast.wxml"/>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view class="indexTopClass">
+  <image src="../images/submitOrder/stripe.png" class="indexTopImage"></image>
+</view>
+
+<!-- 地址部分 -->
+<view class="addrArea" ontap='editAddress'>
+  <!-- 当有收货地址时 -->
+  <block wx:if="{{addressInfo}}">
+    <block wx:if="{{addressInfo.detailAdress.length <= 18}}">
+      <view class="contact_boxMin">
+        <view class="left_boxMin">
+          <image class="left_iconMin" src="../images/submitOrder/location.png"></image>
+        </view>
+        <view class="content_boxMin">
+          <view class="content_topMin">收货人：{{addressInfo.initial.customName}} {{addressInfo.initial.phone}}</view>
+          <view class="content_buttomMin">收货地址：{{addressInfo.detailAdress}}</view>
+        </view>
+        <view class="right_boxMin">
+          <image class='right_icon' src="../images/submitOrder/return.png"></image>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="contact_box">
+        <view class="left_box">
+          <image class="left_icon" src="../images/submitOrder/location.png"></image>
+        </view>
+        <view class="content_box">
+          <view class="content_top">收货人：{{addressInfo.name}} {{addressInfo.telNumber}}</view>
+          <view class="content_buttom">收货地址：{{addressInfo.detailAdress}}</view>
+        </view>
+        <view class="right_box">
+          <image class='right_icon' src="../images/submitOrder/return.png"></image>
+        </view>
+      </view>
+    </block>
+  </block>
+  <!-- 当没有收货地址时  -->
+  <block wx:else>
+    <view class="addNewAddr">
+      <view class="location_icon">
+        <image class="left_icon" src="../images/submitOrder/location.png"></image>
+      </view>
+      <view class="addNewTest">请填写收货地址</view>
+    </view>
+  </block>
+</view>
+
+
+<view class="division1"></view>
+
+<!-- 订单列表 需循环遍历 -->
+<view class="orderList" wx:for="{{orderList}}" wx:key="id">
+  <!-- 店铺信息  -->
+  <view class="shopInfo">
+    <view class="shop_icon">
+      <image class="shopImg" src="../images/submitOrder/shop.png"></image>
+    </view>
+    <view class="shopName">
+      <!-- {{shopName}} -->
+      {{item.shop.name}}
+    </view>
+  </view>
+  <!-- 商品列表  -->
+  <view class="commodityList">
+    <!-- 循环显示的box  -->
+    <view class="commodityListContent" wx:for="{{item.shopArray}}" wx:for-item="item1" wx:key="id">
+      <!-- 商品主图  -->
+      <view class="comContentImg">
+        <!-- <image class='composter' src="../images/submitOrder/indexShopImage.png"></image> -->
+         <image class='composter' src="{{imgUrl + item1.resource_id}}"></image>
+      </view>
+      <!--商品信息  -->
+      <view class="comContenInfo">
+        <view class="comDesc">
+          <view class="comTitle">{{item1.goods_name}}</view>
+          <view class="comPric">￥{{item1.offer_string}}</view>
+        </view>
+        <view class="comParameter">
+          <!-- <block wx:if=""><block/> -->
+          <view class="comColor">{{item1.k}};{{item1.val}}</view>
+        </view>
+        <view class="comPrice">
+          <view class="comNumb">*{{item1.deal_num}}</view>
+          <view class="price">￥{{item1.offer_string*item1.deal_num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品运费  -->
+  <view class="freightInfo">
+    <view class="freightInput_left">
+      <input type="digit" data-index="{{index}}" bindinput="eventHandle" bindfocus="focusEventHandle" class="freightInput" placeholder="请填写运费" />
+      <image class="freight" src="../images/submitOrder/freight.png"></image>
+    </view>
+    <view class="freightDesc_right">
+      <test class="freightDesc">运费说明：</test>
+      <test class="inquiryFreight">了解运费信息请联系卖家</test>
+    </view>
+  </view>
+  <!-- 商品备注 -->
+  <view class="commodityRemark">
+    <input class="LeavingMessage" data-index="{{index}}" bindblur="LeavingMessageEvent" placeholder="请快点发货" />
+
+    <!-- <textarea placeholder="请快点发货"/> -->
+  </view>
+  <!-- 单店铺商品汇总 -->
+  <!-- <view class="commodityTotal">{{commodityNum}}件 | 店铺合计（含运费）： ￥{{commodityPrice}}</view> -->
+  <view class="commodityTotal">
+    <view class="commodityNum"> {{item.shop.num}}件\r\n\r\n</view>
+    <view class="verticalPartition"></view>
+    <view class="commodityTest">\r\n店铺合计（含运费）： </view>
+    <view class="commodityPrice"> ￥{{item.shop.storeGoodsPrice}} </view>
+  </view>
+</view>
+
+<view class="division2"></view>
+
+<!-- 结算  -->
+<view class="total">
+  <!-- 单项汇总 -->
+  <view class="individualSummary">
+    <view class="individualSummary_box">
+      <!-- 数量总计  -->
+      <view class="numTotal">
+        <view class="quantityTotalTest">数量总计</view>
+        <!-- <test class="quantityTotal">{{quantityTotal}}</test> -->
+        <view class="quantityTotal">{{totalNum}}件</view>
+
+      </view>
+      <!-- 运费总计 -->
+      <view class="freTotal">
+        <test class="freightTotalTest">运费总计</test>
+        <!-- <test class="freightTotal">{{}}</test> -->
+        <test class="freightTotal">￥{{inputData}}</test>
+
+      </view>
+      <!-- 货款总计 -->
+      <view class="priceTotal">
+        <test class="paymentTotalTest">贷款总计</test>
+        <test class="paymentTotal">￥{{totalPriceNum}}</test>
+      </view>
+    </view>
+  </view>
+
+  <view class="amountTotal_box">
+    <!-- 应付总金额  -->
+    <view class="amountT">
+      <view class="amountTotalTest">应付总额： </view>
+      <view class="amountTotal"> ￥{{totalPrice}} </view>
+    </view>
+  </view>
+
+  <!-- 微信支付  -->
+  <view class="primary_box" style="">
+    <button type="primary" size="default" loading="{{loading}}" plain="{{plain}}" disabled="{{addressInfo? false : true}}" bindtap="primary"> 微信支付 </button>
+  </view>
+</view>

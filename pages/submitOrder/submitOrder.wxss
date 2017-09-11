@@ -1,0 +1,481 @@
+/* 地址部分 css  */
+
+.indexTopClass {
+  width: 100%;
+  height: 4rpx;
+  position: relative;
+}
+
+.indexTopImage {
+  width: 100%;
+  height: 4rpx;
+  position: absolute;
+}
+
+/* 有收货地址，并且地址字段长度大于18时 css*/
+
+.contact_box {
+  width: 100%;
+  height: 168rpx;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+
+.left_box {
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 64rpx;
+}
+
+.left_icon {
+  width: 26rpx;
+  height: 43rpx;
+}
+
+.content_box {
+  float: left;
+  height: 96rpx;
+  width: 570rpx;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+  position: relative;
+}
+
+.content_top {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.content_buttom {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #666;
+  position: absolute;
+  top: 43rpx;
+}
+
+.right_box {
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 64rpx;
+}
+
+.right_icon {
+  width: 16rpx;
+  height: 28rpx;
+}
+
+/* 有收货地址，并且地址字段长度小于19时 css*/
+
+.contact_boxMin {
+  width: 100%;
+  height: 128rpx;
+  /* overflow: hidden;  *//* position: relative; *//* background: #fff url(../images/submitOrder/stripe.png) no-repeat center top; */
+  background-color: #fff;
+}
+
+.left_boxMin {
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 45rpx;
+}
+
+.left_iconMin {
+  width: 26rpx;
+  height: 43rpx;
+}
+
+.content_boxMin {
+  float: left;
+  height: 96rpx;
+  width: 570rpx;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+  position: relative;
+}
+
+.content_topMin {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.content_buttomMin {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #666;
+  position: absolute;
+  top: 43rpx;
+}
+
+.right_boxMin {
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 48rpx;
+}
+
+.right_iconMin {
+  width: 16rpx;
+  height: 28rpx;
+}
+
+/* 添加地址部分 css */
+
+.addNewAddr {
+  width: 100%;
+  height: 96rpx;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+
+.location_icon {
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.addNewTest {
+  height: 40rpx;
+  width: 570rpx;
+  position: absolute;
+  left: 80rpx;
+  top: 32rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 隔断 css*/
+
+.division1 {
+  width: 100%;
+  height: 20rpx;
+  background-color: #f5f5f5;
+}
+
+/* 订单列表 css */
+
+.shopInfo {
+  width: 100%;
+  height: 88rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #e6e6e6;
+  position: relative;
+}
+
+.shopImg {
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 28rpx;
+}
+
+.shopName {
+  position: absolute;
+  top: 30rpx;
+  left: 84rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  width: 636rpx;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.commodityListContent {
+  width: 690rpx;
+  padding: 10rpx 30rpx 0 30rpx;
+  background-color: #fff;
+  display: flex;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.comContentImg {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.composter {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.comContenInfo {
+  width: 500rpx;
+  padding-left: 10rpx;
+}
+
+.comDesc {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rpx;
+  line-height: 38rpx;
+}
+
+.comTitle {
+  width: 328rpx;
+  height: 74rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.comParameter {
+  line-height: 38rpx;
+  margin-top: 4rpx;
+  color: #999;
+}
+
+.comPrice {
+  line-height: 38rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comNumb {
+  color: #999;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.freightInfo {
+  height: 88rpx;
+  width: 690rpx;
+  margin: 10rpx 0 0 30rpx;
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+
+.freightInput_left {
+  float: left;
+  margin-top: 12rpx;
+  position: relative;
+}
+
+.freightInput {
+  display: inline-block;
+  width: 202rpx;
+  height: 56rpx;
+  border: 2rpx solid #6e08a8;
+  outline: none;
+  padding-left: 14rpx;
+  font-size: 24rpx;
+}
+
+.freight {
+  width: 30rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 18rpx;
+}
+
+.freightDesc_right {
+  float: left;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.freightDesc {
+  font-size: 26rpx;
+  line-height: 36rpx;
+  color: #333;
+}
+
+.inquiryFreight {
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #999;
+}
+
+.commodityRemark {
+  width: 100%;
+  height: 114rpx;
+  /* padding: 0 0 0 0rpx; */
+}
+
+.LeavingMessage {
+  display: inline-block;
+  width: 668rpx;
+  height: 70rpx;
+  border-radius: 6rpx;
+  outline: none;
+  padding-left: 22rpx;
+  font-size: 24rpx;
+  color: #333;
+  background-color: #f5f5f5;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.commodityTotal {
+  height: 132rpx;
+  width: 100%;
+  padding: 0 -30rpx 0 -30rpx;
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 20rpx solid #f5f5f5;
+  color: #333;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.commodityNum {
+}
+
+.verticalPartition {
+  width: 1rpx;
+  height: 40rpx;
+  border-left: 2rpx solid #e6e6e6;
+}
+
+.commodityTest {
+}
+
+.commodityPrice {
+  margin-right: 30rpx;
+  font-weight: 600;
+  color: #6e08a8;
+}
+
+.division2 {
+  width: 100%;
+  height: 10rpx;
+  background-color: #f5f5f5;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+
+/* 结算部分 css */
+
+.total {
+}
+
+/* 各单项汇总 css  */
+
+.individualSummary {
+  width: 100%;
+  height: 170rpx;
+  color: #333;
+  font-size: 24rpx;
+}
+
+.individualSummary_box {
+  margin-top: 30rpx;
+}
+
+.numTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  line-height: 42rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.quantityTotalTest {
+  margin-left: 30rpx;
+}
+
+.quantityTotal {
+  margin-right: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.freTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  line-height: 42rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+
+.freightTotalTest {
+  margin-left: 30rpx;
+}
+
+.freightTotal {
+  margin-right: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 总货款 css  */
+
+.priceTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  line-height: 42rpx;
+  color: #333;
+  margin-top: 0rpx;
+}
+
+.paymentTotalTest {
+  margin-left: 30rpx;
+}
+
+.paymentTotal {
+  margin-right: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.amountTotal_box {
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.amountT {
+  width: 690rpx;
+  height: 88rpx;
+  border-top: 2rpx solid #e6e6e6;
+  position: absolute;
+  left: 30rpx;
+  font-size: 28rpx;
+  line-height: 56rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.amountTotalTest {
+  line-height: 50rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.amountTotal {
+  color: #6e08a8;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+/* 微信支付部分 css  */
+
+.primary_box {
+  width: 690rpx;
+  height: 110rpx;
+  background-color: #fff;
+  margin-left: 30rpx;
+}
+
+.primary {
+}
+
+.nput {
+  width: 220rpx;
+  height: 50rpx;
+  border: 1rpx solid #6e08a8;
+}

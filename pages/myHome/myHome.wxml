@@ -1,0 +1,81 @@
+<view class="myBox">
+<!-- 我的头部 -->
+  <view class="myTop" bindtap="bindViewTap"> 
+        <view class="mytopLeft">
+          <image src="{{userInfo.avatarUrl}}" class="myImg"></image> 
+         <!-- <image src="../../pages/images/myImg.png" class="myImg"></image>  -->
+        </view>
+        <view class="mytopRight">
+            <!-- <view class="Myname">你猜我是谁</view> -->
+             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            <view class="Myaddress" bindtap="deAddress">我的收货地址 ></view>
+        </view>
+</view>
+<!-- 我的内容 -->
+<view class="myController">
+  <view class="info_list"> 
+   <view class="weui_cell" bindtap="allorder">
+            <view class="weui_cell_Img"><image src="../../pages/images/myICon1.png"></image></view>
+            <view class="weui_cell_Text">
+                <view class="weuiText">全部订单</view>
+            </view>
+            <view class="with_arrow">
+                <image src="../../pages/images/myICon5.png" class="with_arrowImg"></image>
+            </view>
+        </view>
+        <view class="weui_cell"  bindtap="alllistorder" data-idx="{{1}}">
+            <view class="weui_cell_Img"><image src="../../pages/images/myICon2.png"></image></view>
+            <view class="weui_cell_Text">
+                <view class="weuiText"> 待付款</view>
+            </view>
+            <view class="with_arrow" >
+                <image src="../../pages/images/myICon5.png" class="with_arrowImg"></image>
+            </view>
+        </view>
+        <view class="weui_cell" bindtap="receiving" data-idx="{{2}}">
+            <view class="weui_cell_Img"><image src="../../pages/images/myICon3.png"></image></view>
+            <view class="weui_cell_Text">
+                <view class="weuiText"> 待收货 </view>
+            </view>
+            <view class="with_arrow">
+                <image src="../../pages/images/myICon5.png" class="with_arrowImg" ></image>
+            </view>
+        </view>
+        <view class="weui_cell">
+         <view class="weui_cell_Img"><image src="../../pages/images/myICon4.png"></image></view>
+            <view class="weui_cell_Text">
+              <contact-button type="default-light" size="30rpx" session-from="weapp" style="font-size:30rpx;margin-left:-7px;">在线客服
+              </contact-button>
+              <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+              <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+              </contact-button>
+          </view>
+            <view class="with_arrow">
+               <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn">
+                <image src="../../pages/images/myICon5.png" class="with_arrowImg"></image>
+              </contact-button>
+            </view>
+        </view>
+  </view>
+</view>
+</view>
+

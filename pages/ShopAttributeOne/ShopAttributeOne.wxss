@@ -1,0 +1,731 @@
+
+.SlideBox{
+  width: 100%;
+  height: 800rpx;
+  overflow: hidden;
+}
+swiper{
+  height: 800rpx;
+}
+.SlideBox .slide-image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.ShopFidexService{
+  position: relative;
+}
+.ShopFidexService .ContactBtn{
+  font-size: 22rpx;
+  position: absolute;
+  top: 34rpx;
+  left: 16rpx;
+  text-align: center;
+  color: #737373;
+  width: 100%;
+  height: 100%;
+  opacity: 0
+}
+/* 内容 */
+.Shop-Con-Box{
+  width: 100%;
+  height: auto;
+  background: #f5f5f5;
+}
+.clear{
+  clear: both;
+}
+.ViewImgList{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+  background: #fff;
+}
+.ViewImgList image{
+  width: 100%;
+  display: block;
+}
+.ShopNavCon {
+  width: 100%;
+  height: 100%;
+  /* overflow-y: auto; */
+  background: #f5f5f5;
+  padding-bottom: 100rpx;
+}
+.ShopCon-Cen{
+  width: 93%;
+  margin: 19rpx auto 0 auto;
+  height: 108rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+.ShopConTitle{
+  width: 100%;
+  height: auto;
+  background: white;
+  float:left;
+}
+.Shop-price-Num{
+  width: 100%;
+  height: auto;
+  background: white;
+}
+.Shop-require{
+  padding: 0 8rpx;
+  height: 27rpx;
+  background: #ffa033;
+  font-size: 22rpx;
+  color:white;
+  line-height: 27rpx;
+  text-align: center;
+  float:left;
+  margin: 12rpx 14rpx 0 0;
+}
+.ShopCon-Cen .ShopBack{
+    background: #e30246;
+}
+.TitleName{
+  color:#333333;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+.ShopPrice-Cen{
+  width: 93%;
+  height: 110rpx;
+  margin: 10rpx auto 0 auto;
+  border-bottom: 1rpx #e0e0e0 solid;
+}
+.ShopPriceCon{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative
+}
+.LookPrice{
+  width: 162rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border: 1rpx solid #940ffb;
+  position: absolute;
+  top:26rpx;
+  right: 0;
+  font-size: 24rpx;
+  color:#6e08a8;
+}
+/* 遮罩 */
+.shadeConBox{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  background:rgba(0,0,0,0.5);
+  z-index: 1992;
+}
+.shadeConMain{
+    position: fixed;
+    width: 560rpx;
+    height: 295rpx;
+    background: white;
+    border-radius: 5rpx;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.shadeText{
+   text-align: center;
+   height: 117rpx;
+   color:#000000;
+   font-size: 28rpx;
+   width: 430rpx;
+   margin: 77rpx auto 0 auto;
+   line-height: 50rpx;
+}
+.shadeBtn{
+  border-top:1rpx solid #d2d3d5;
+  text-align: center;
+  color:#6e08a8;
+  font-size: 32rpx;
+  line-height: 100rpx;
+}
+.ShopPriceMore{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.PriceMoreFor{
+  float: left;
+  width: 187rpx;
+  margin-top: 10rpx;
+}
+.PriceMoreFor text{
+  color:#6e08a8;
+}
+.PriceMoreFor .PriceMoreSymbol{
+    font-size: 22rpx;
+    margin-right: 12rpx;
+}
+.PriceMoreFor  .PriceMorePrice{
+  font-size: 40rpx;
+}
+.LeftPriceSingle{
+  width: 100%;
+  overflow: hidden;
+}
+.LeftPriceSingle text{
+  color:#6e08a8;
+   float:left;
+}
+.PriceSymbol{
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+.PriceNumber{
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-right: 16rpx;
+}
+ .PriceType{
+      width: 62rpx;
+      height: 24rpx;
+      line-height: 24rpx;
+      text-align: center;
+      border: 1rpx solid #6e08a8;
+      font-size: 16rpx;
+      margin-top: 15rpx;
+}
+.PriceTypeMore{
+   width: 61rpx;
+  height: 22rpx;
+  border: 1rpx solid #6e08a8;
+  font-size: 16rpx;
+  line-height: 22rpx;
+  float:left;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.NumMore{
+  float:left;
+  width: 188rpx; 
+}
+.NumMore text{
+  color:#737373;
+  font-size: 24rpx;
+}
+/* 返回顶部 */
+
+.GoTop {
+  position: fixed;
+  right: 17rpx;
+  bottom: 100rpx;
+  width: 100rpx;
+}
+
+.GoShopImg, .GoTopImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.GoShopImg {
+  margin-bottom: 20rpx;
+}
+
+.GoTop image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.LeftPriceNum{
+  width: 100%;
+  font-size: 22rpx;
+  color:#737373;
+  margin-top: 10rpx;
+}
+.Shop-site{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.Shop-SiteCon{
+  width: 93%;
+  margin: 0 auto;
+}
+.freight{
+  float: left;
+  font-size: 22rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.freight text:nth-child(1){
+  color:#b8b8b8;
+  margin-right: 25rpx;
+}
+.freightSite{
+   font-size: 22rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: right;
+}
+.freightSite text:nth-child(1){
+  color:#b8b8b8;
+  margin-right: 25rpx;
+}
+.Shop-attribute{
+  width: 100%;
+  background: white;
+  height: 65rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  float: left;
+}
+.attributeBox{
+  width: 93%;
+  margin: 0 auto;
+}
+.attributeColor{
+  height: 65rpx;
+  line-height: 65rpx;
+  border-bottom: 1rpx solid #e0e0e0;
+  font-size: 22rpx;
+  color:#666666;
+}
+.attributeColor text:nth-child(1){
+    color:#999999;
+    margin-right: 23rpx;
+}
+.attributeColor .ArrowsImg{
+  display: block;
+  float:right;
+  width: 20rpx;
+  height: 12rpx;
+  margin-top: 29rpx;
+}
+.attributeT{
+  height: 65rpx;
+  line-height: 65rpx;
+  color:#666666;
+  font-size: 22rpx;
+}
+.attributeT .attributeArrows{
+   display: block;
+  float:right;
+  width: 20rpx;
+  height: 12rpx;
+  margin-top: 29rpx;
+}
+.StoreMsg{
+  width: 100%;
+  background: white;
+  height: 144rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.StoreMsgAuto{
+  width: 93%;
+  margin: 28rpx auto 0 auto;
+  overflow: hidden
+}
+.StoreMsgLogo{
+  float: left;
+  position: relative;
+  width: 70%;
+}
+.StoreMsgLogo image{
+   width: 86rpx;
+   height: 86rpx;
+   display: block;
+   float:left;
+   margin-right: 24rpx;
+}
+.ShopDetails{
+  width: 100%;
+  margin-top: 20rpx;
+  height: auto;
+  padding-bottom: 88rpx;
+  /* text-align: center; */
+}
+.StoreName{
+  float:left;
+  width: 65%;
+}
+.StoreName text{
+  color:#333333;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+.satisficingImg{
+  width: 126rpx;
+  height: 20rpx;
+  float:left;
+  margin-top: 10rpx;
+}
+.satisficingImg image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.StoreBtn{
+  float:right;
+  width: 162rpx;
+  height: 48rpx;
+  border: 1rpx solid #9d9d9d;
+  border-radius: 5rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color:#666666;
+  font-size:24rpx;
+  margin-top: 19rpx;
+}
+.ShopFidexBox{
+  width: 100%;
+  height: 88rpx;
+  position: fixed;
+  background-color: #fff;
+  left: 0;
+  bottom: 0;
+  z-index: 1995;
+}
+.ShopFidexLeft{
+  width: 40%;
+  float: left;
+}
+.ShopFidexRight{
+  width: 60%;
+  float:left;
+}
+.ShopFidexService{
+    width: 49%;
+    float: left;
+    height: 88rpx;
+    border-top:1rpx solid #e0e0e0;
+    border-right:1rpx solid #e0e0e0;
+    background: white;
+}
+.ShopFidexStore{
+   width: 50%;
+  float: left;
+  height: 88rpx;
+   border-top:1rpx solid #e0e0e0;
+   background: white;
+}
+.ShopFidexBox image{
+display: block;
+  width: 38rpx;
+  height: 35rpx;
+  margin: 13rpx auto 6rpx auto;
+}
+.ShopFidexBox text{
+  font-size: 22rpx;
+  color:#737373;
+  text-align: center;
+  display: block
+}
+.ShopFidexRight view{
+  width: 50%;
+  line-height: 88rpx;
+  height: 88rpx;
+  background: #6e08a8;
+  color: white;
+  font-size: 32rpx;
+  float: left;
+  text-align: center;
+}
+.ShopFidexRight .ShopFidexGoShop{
+  background: #a02be2;
+}
+/* 计算 */
+.countFidex{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:rgba(0,0,0,0.5);
+  width:100%;
+  height:100%;
+  z-index: 1992;
+}
+.countFidexBox{
+  width: 100%;
+  height: 864rpx;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2200;
+}
+.countStoreMsg{
+  width: 100%;
+  height: 204rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.countLogo{
+  margin: 24rpx 20rpx 0 20rpx;
+  width: 160rpx;
+  height: 160rpx;
+  float:left;
+}
+.countLogo image{
+  width: 100%;
+  height: 100%;
+  display: block
+}
+.countPrice{
+  margin-top: 53rpx;
+  float:left;
+}
+.countPrice text{
+   color: #6e08a8;
+   float: left;
+}
+.countNum{
+  margin-top: 20rpx;
+  color:#737373;
+  font-size: 24rpx;
+  float: left;
+}
+.CountText{
+  line-height: 80rpx;
+  height: 80rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #e0e0e0;
+  text-align: center;
+  color:#333333;
+  font-size: 28rpx;
+}
+.CountInputType{
+  width: 100%;
+  height: 488rpx;
+  background: #f5f5f5;
+  overflow: hidden;  
+  position: relative;
+}
+.CountInputBox{
+   margin: 153rpx auto 0 auto;
+   width: 280rpx;
+   height: auto;
+}
+.CountInputBox text{
+  float:left;
+  width: 62rpx;
+  height: 62rpx;
+  background: white;
+  border: 1rpx solid #e0e0e0;
+  line-height: 62rpx;
+  text-align: center;
+}
+.CountInputBox .InputVal{
+  float: left;
+  width: 106rpx;
+  height: 62rpx;
+  border: 1rpx solid #e0e0e0;
+  border-left:none;
+  border-right: none;
+  text-align: center;
+  line-height: 62rpx;
+  background: white;
+}
+.CountBtnGO{
+  height: 89rpx;
+  line-height: 89rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  /* z-index: 20000; */
+}
+.CountBtnGO text{
+  width: 50%;
+  float: left;
+  background: #a02be2;
+  text-align: center;
+  font-size: 32rpx;
+  color:white;
+}
+.CountBtnGO text:nth-child(2){
+  background: #6e08a8;
+}
+.TotalBox{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 36rpx;
+  line-height: 36rpx;
+  background: white;
+  width: 100%;
+}
+.TotalRight{
+  float: right
+}
+.TotalNum{
+  float:left;
+}
+.TotalNum{
+   color:#000000;
+   font-size: 16rpx;
+   float: left;
+   margin-right: 15rpx;
+}
+.TotalNum text:nth-child(2){
+   color:#e8470c;
+}
+.TotalPrice{
+  color:#e8470c;
+  float:left;
+  font-size: 16rpx;
+}
+.MorePriceNoType{
+  width: 540rpx;
+  margin-top: 40rpx;
+  height: auto;
+  overflow: hidden
+}
+.PriceNoTypeFor{
+  float:left;
+  width: 181rpx;
+}
+.PriceNoTypeFor text{
+  color:#6e08a8
+}
+.PriceNoTypeFor .PriceSymbol{
+  font-size: 22rpx;
+  margin-right: 10rpx;
+}
+.PriceNoTypeFor .PriceNumber{
+  font-size: 40rpx;
+}
+.MoreNumList{
+  width:540rpx;
+  height: auto;
+  margin-top: 40rpx;
+  float: left;
+}
+.MoreNumFor{
+  width: 181rpx;
+  float: left;
+}
+.MoreNumFor text{
+  float:left;
+  font-size: 24rpx;
+  color:#797979;
+  width: 188rpx;
+}
+/* 商品下架 */
+
+.ShopNavConNo {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 308rpx;
+}
+
+.ShopNavConNoMain {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.ShopNavConNoImg {
+  width: 152rpx;
+  height: 153rpx;
+  margin: 0 auto;
+}
+
+.ShopNavConNoImg image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ShopNoLook {
+  text-align: center;
+  color: #737373;
+  font-size: 28rpx;
+  margin: 30rpx 0 48rpx 0;
+}
+
+.ShopsoldOut {
+  color: #a0a0a0;
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 90rpx;
+}
+
+.ShopGoHome {
+  width: 258rpx;
+  height: 68rpx;
+  border: 1rpx solid #6e08a8;
+  border-radius: 5rpx;
+  text-align: center;
+  line-height: 68rpx;
+  color: #6e08a8;
+  font-size: 36rpx;
+  margin: 0 auto;
+}
+
+
+
+
+/* 商品属性 */
+.ShoppingTypeFidex{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 2050;
+}
+.ShoppingTypeMain{
+  width: 100%;
+  height: 680rpx;
+  background: white;
+  overflow-y: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.ShoppingTypeAuto{
+  width: 93%;
+  margin: 0 auto;
+}
+.ShoppingTypeTitle{
+  text-align: center;
+  margin-top: 24rpx;
+  color:#707070;
+  font-size: 32rpx;
+}
+.ShoppingTypeType{
+  width: 100%;
+  margin-top: 5rpx;
+  height: auto;
+  overflow-y: auto;
+}
+.ShoppingTypeFor{
+  width: 100%;
+  height: 74rpx;
+  line-height: 74rpx;
+  border-bottom: 1rpx solid #ededed;
+  color:#7b7b7b;
+  font-size: 28rpx;
+}
+.ShoppingTypeFor text{
+  width: 50%;
+  float: left;
+}
+.TypeFidexBtn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: #6e08a8;
+  color:white;
+  font-size: 32rpx;
+}

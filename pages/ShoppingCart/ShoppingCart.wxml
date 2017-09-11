@@ -1,0 +1,109 @@
+<!--ShoppingCart.wxml-->
+<import src="../../toast/toast.wxml"/>
+<template is="wxToast" data="{{...wxToastConfig}}"></template>
+<view class="ShoppingCartBox_f">
+<view class="ShoppingCartBox" wx:if="{{!no_shopping}}">
+  <view class="ShoppingCart"  wx:for="{{addressList}}"  wx:key="id" data-index="{{index}}" wx:for-index="index" wx:if="{{item.shopArray.length>0?true:false}}" style="{{item.txtStyle}}">
+  <view class="shopBox">
+      <view  class="checkbox" data-btn = "{{item.shop.isCheckbox}}" catchtap="shopAllcheckboxFn" data-index="{{index}}">
+        <image src="{{item.shop.src}}" mode ='aspectFit' ></image>
+      </view>
+     <view class="shop" bindtap="shopxFn" data-shop_id="{{item.shop.id}}">
+        <image src="../images/Shopping/shop.png" mode ='aspectFit'></image>
+     </view>
+     <view class="ShoppingName" data-shop_id="{{item.shop.id}}" bindtap="shopxFn">{{item.shop.name}}</view>
+  </view>
+  <view class="shoppingList">
+    <view class="shoppingBox" wx:for="{{item.shopArray}}" wx:for-item="item1" wx:key="id" data-father="{{index}}" data-index="{{index1}}" wx:for-index="index1"   bindtouchstart="touchS" bindtouchmove="touchM"  style="{{item1.txtStyle}}">
+       <view  class="checkbox" data-father="{{index}}" data-index="{{index1}}" catchtap="checkboxFn">
+        <image src="{{item1.src}}" mode ='aspectFit'></image>
+       </view>
+       <view class="shoppingImg" data-goodid="{{item1.goods_id}}" catchtap="shop_path">
+          <image src="{{'https://api.joinsilk.com/File/download?id='+item1.resource_id}}" alt='{{item1.goods_name}}' mode='aspectFit'></image>
+       </view>
+       <view class="shoppingData">
+          <view class="shopping_title" data-goodid="{{item1.goods_id}}" catchtap="shop_path">
+            <view class="shopping_titles">{{item1.goods_name}}</view> 
+            </view>
+            <view class="shopping_type">
+              <view class="code">{{item1.k}}</view><view class="showHide" wx:if="{{item1.k}}">；</view><view class="code">{{item1.val}}</view>
+            </view>
+              <view class="shopping_tab">
+                <view class="tab_left">
+                  <view class="reduce" data-father="{{index}}" data-index="{{index1}}" catchtap="reduce">-</view>
+                  <input type="number" data-father="{{index}}" data-index="{{index1}}" catchblur="shoppingBlur" confirm-type='done' class="shopping_num" value='{{item1.deal_num}}' />
+                  <view class="plus" data-father="{{index}}" data-index="{{index1}}" catchtap="plus">+</view>
+                </view>
+                <view class="tab_right">
+                  ￥<view class="money">{{item1.Code_price}}</view>
+                </view>
+             
+       </view></view>
+       <view class="delete_btn" bindtap="remove_btn" data-father="{{index}}" data-index="{{index1}}">
+        删除
+       </view>
+    </view>
+  </view>
+  </view>
+
+
+
+  <!-- // bindtouchstart="InvaTouchS" bindtouchmove="laVtouchM" bindtouchend="laVtouchE" style="{{item.txtStyle}}" -->
+  <view class="BeOverdue" wx:if="{{!BeOverdue}}">
+       <view class="shoppingBox"  wx:for="{{InvalidList}}" wx:key="{{item}}" data-index="{{index}}" >
+       <view  class="Invalid">失效</view>
+       <view class="shoppingImg no_shoppingImg">
+          <image src="{{'https://api.joinsilk.com/File/download?id='+item.resource_id}}" alt='{{item.goods_name}}' mode='aspectFit'></image>
+       </view>
+       <view class="shoppingData">
+          <view class="shopping_title">
+            <view class="shopping_titles no_shopping_titles">{{item.goods_name}}</view>
+          </view>
+          <view class="shopping_type">
+           <view class="code">{{item.k}}</view><view class="showHide" wx:if="{{item.k}}">；</view><view class="code">{{item.val}}</view>
+          </view>
+          <view class="shopping_tab">
+            <view class="no_shopping">该商品已不能购买</view>
+          </view>
+       </view>
+        <view class="delete_btn"  data-num="{{index}}">
+        删除
+       </view>
+    </view>
+
+<view class="beOverdue_bottom_box">
+  <view class="beOverdue_bottom" catchtap="delete_btn">
+  清空失效商品
+</view>
+  </view>
+  </view>
+
+  <view class="Settlement_box">
+     <view class="checkboxBox_all">
+     <view  class="checkbox" data-num = "{{_num}}" bindtap="allcheckboxFn">
+     <image src="{{src}}" mode ='aspectFit'></image>
+     </view>
+     <view class="checkboxText">全选</view>
+     </view>
+     <view class="pice_shp">
+      <view class="total">总计：<view class='total_num'>￥{{Calculation_pric_num}}</view></view>
+       <view class="total_bottom">不含运费</view>
+     </view>
+     <view class="Settlement" bindtap="Settlement">
+      去结算
+     </view>
+  </view>
+</view>
+
+<view class="no_shopping" wx:if="{{no_shopping}}">
+  <view class="img_">
+    <image src="../images/Shopping/shopping.png" mode='widthFix'></image>
+  </view>
+  <view class="no_title">
+    购物车空空的哦,赶紧行动吧~
+  </view>
+  <navigator  class="btn_no" url="../index/index" open-type="switchTab">
+    去逛逛
+  </navigator>
+</view>
+</view>

@@ -1,0 +1,258 @@
+<scroll-view scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="ShoppingScroll" bindscrolltolower="scrolltolower" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;height:100%">
+  <!-- 内容 -->
+  <view class="Shop-Con-Box" wx:if="{{ToggleShop}}">
+    <!-- 轮播 -->
+    <view class="SlideBox">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicatorActiveColor="{{indicatorActiveColor}}" indicatorColor="{{indicatorColor}}">
+        <block wx:for="{{resourceIdListArray}}">
+          <swiper-item>
+            <image src="{{'https://api.joinsilk.com/File/download?id='+item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="ShopConTitle">
+      <view class="ShopCon-Cen">
+        <view class="Shop-require {{supplyType=='现货'?'ShopBack':''}}" wx:if="{{supplyType==''?false:true}}">
+          <text>{{supplyType}}</text>
+        </view>
+        <view class="TitleName">
+          <text>{{name}}</text>
+        </view>
+      </view>
+      <!-- price -->
+      <view class="Shop-price-Num">
+        <view class="ShopPrice-Cen">
+          <view class="ShopPriceCon" wx:if="{{ShopSinglePrice}}">
+            <view class="LeftPriceSingle">
+              <text class="PriceSymbol">￥</text>
+              <text class="PriceNumber">{{dataMore.price}}</text>
+              <text class="PriceType">零售价</text>
+            </view>
+            <view class="LeftPriceNum">
+              <text>{{dataMore.minimum}}{{dataMore.calculateType}}起批</text>
+            </view>
+            <view class="LookPrice" bindtap="LookFn" wx:if="{{ClickBtn}}">
+              <text>查看批发价</text>
+            </view>
+          </view>
+          <!-- 多个价格 -->
+          <view class="ShopPriceMore" wx:if="{{MorePrice}}">
+            <!-- 价格 -->
+            <view class="PriceMoreFor" wx:for="{{goodsQuantityOffers}}">
+              <text class="PriceMoreSymbol">￥</text>
+              <text class="PriceMorePrice">{{item.price}}</text>
+            </view>
+            <!-- 批发价 -->
+            <view class="PriceTypeMore">
+              <text>批发价</text>
+            </view>
+            <view class="clear"></view>
+            <!-- 数量 -->
+            <view class="NumMore" wx:for="{{goodsQuantityOffers}}">
+              <text>{{item.priceLimit}}</text>
+            </view>
+          </view>
+        </view>
+        <!-- 运费 -->
+        <view class="Shop-site">
+          <view class="Shop-SiteCon">
+            <view class="freight">
+              <text>运费</text>
+              <text>{{dataMore.freightExplain}}</text>
+            </view>
+            <view class="freightSite">
+              <text>发货</text>
+              <text>{{contactProvince}}{{contactCity}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 出现弹窗 -->
+    <view class="shadeConBox" hidden="{{shadeCon}}">
+      <view class="shadeConMain">
+        <!-- 内容 -->
+        <view class="shadeText">
+          您目前不是认证采购商【丝集网】无法查看批发价
+        </view>
+        <!-- btn -->
+        <view class="shadeBtn" bindtap="CloseShade">知道了</view>
+      </view>
+    </view>
+    <!-- 属性 -->
+    <view class="Shop-attribute">
+      <view class="attributeBox">
+        <!-- 商品属性 -->
+        <view class="attributeT" bindtap="TypeBtnFixed">
+          <text>商品属性</text>
+          <!-- 右边箭头 -->
+          <image src="../images/arrowsBottom.png" class="attributeArrows"></image>
+        </view>
+      </view>
+    </view>
+ 
+    <!-- 店铺信息 -->
+    <!-- 清楚浮动 -->
+    <view class="clear"></view>
+    <view class="StoreMsg">
+      <view class="StoreMsgAuto">
+        <view class="StoreMsgLogo">
+          <image src="{{'https://api.joinsilk.com/File/download?id='+dataMore.storeLogo}}" wx:if="{{normalImg}}"></image>
+          <image src="../images/Nologo.png" wx:if="{{defaultImg}}"></image>
+          <view class="StoreName">
+            <text>{{dataMore.storeName}}</text>
+          </view>
+          <view class="satisficingImg">
+            <image src="../images/satisfaction.png"></image>
+          </view>
+        </view>
+        <!-- Btn -->
+        <view class="StoreBtn" bindtap="GoShopBtn">
+          <text>进店逛逛</text>
+        </view>
+      </view>
+    </view>
+    <!-- 商品详情 -->
+    <view class="ShopDetails">
+      <!-- <import src="../wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:detail.nodes}}" /> -->
+      <view wx:for="{{imgurlList}}" class="ViewImgList">
+        <image src="{{item.src_btn}}" wx:key="index" mode="aspectFit" data-index="{{index}}" binderror="errImg"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 购物车弹窗 -->
+  <view class="countFidex" hidden="{{countFidex}}" catchtap="FidexTotalBtn"></view>
+ 
+
+  <!-- 无商品 -->
+  <view class="ShopNavConNo" wx:if="{{Toggle}}">
+    <view class="ShopNavConNoMain">
+      <view class="ShopNavConNoImg">
+        <image src="../images/StoreNo.png"></image>
+      </view>
+      <view class="ShopNoLook">暂时无法查看此商品</view>
+      <view class="ShopsoldOut">该商品无法查看或已下架</view>
+      <view class="ShopGoHome" bindtap="GoShoppingHome">返回首页</view>
+    </view>
+  </view>
+</scroll-view>
+<!-- 返回顶部 -->
+<view class="GoTop">
+  <view class="GoShopImg" bindtap="FidexBtnGoShopping">
+    <image src="../images/GoShop.png"></image>
+  </view>
+  <view class="GoTopImg" catchtap="GoBack" wx:if="{{goTop_show}}">
+    <image src="../images/GoTop.png"></image>
+  </view>
+</view>
+<!-- 窗口 -->
+<view class="ShopFidexBox">
+  <view class="ShopFidexLeft">
+    <view class="ShopFidexService">
+      <image src="../images/service.png" class="serviceImages"></image>
+      <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn"></contact-button>
+      <text>客服</text>
+    </view>
+    <view class="ShopFidexStore" bindtap="GoShopBtn">
+      <image src="../images/store.png" class="StoreImages"></image>
+      <text>店铺</text>
+    </view>
+  </view>
+  <view class="ShopFidexRight">
+    <view class="ShopFidexGoShop" bindtap="FidexBtn">
+      加入购物车
+    </view>
+    <view class="ShopFidexGoBuy" bindtap="FidexBtn">
+      立即购买
+    </view>
+  </view>
+</view>
+
+ <view class="countFidexBox" hidden="{{CountBoxNav}}">
+    <!-- 商品信息 -->
+    <view class="countStoreMsg">
+      <view class="countLogo">
+        <image src="{{'https://api.joinsilk.com/File/download?id='+dataMore.storeLogo}}" wx:if="{{normalImg}}"></image>
+        <image src="../images/Nologo.png" wx:if="{{defaultImg}}"></image>
+      </view>
+      <view class="countPrice" wx:if="{{ShopSinglePrice}}">
+        <text class="PriceSymbol">￥</text>
+        <text class="PriceNumber">{{dataMore.price}}</text>
+        <text class="PriceType">零售价</text>
+      </view>
+      <!-- More -->
+      <view class="MorePriceNoType" wx:if="MorePrice">
+        <view class="PriceNoTypeFor" wx:for="{{goodsQuantityOffers}}">
+          <text class="PriceSymbol">￥</text>
+          <text class="PriceNumber">{{item.price}}</text>
+        </view>
+      </view>
+      <view class="countNum" wx:if="{{SingleNumL}}">{{dataMore.minimum}}{{dataMore.calculateType}}</view>
+      <!-- MoreNum -->
+      <view class="MoreNumList" wx:if="{{MoreNum}}">
+        <view class="MoreNumFor" wx:for="{{goodsQuantityOffers}}">
+          <text>{{item.priceLimit}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- num -->
+    <view class="CountText">
+      <text>数量</text>
+    </view>
+    <!-- input -->
+    <view class="CountInputType">
+      <view class="CountInputBox" wx:if="{{SingleCount}}">
+        <text bindtap="reducePrice">-</text>
+        <input type="number" class="InputVal" value="{{singleNum}}" bindinput="SingleKey" />
+        <text bindtap="PriceAdd">+</text>
+      </view>
+      <!-- MorePrice -->
+      <view class="CountInputBox" wx:if="{{MoreCount}}">
+        <text bindtap="MorePriceSub">-</text>
+        <input type="number" class="InputVal" value="{{singleNum}}" bindinput="bindinput" />
+        <text bindtap="MorePriceAdd">+</text>
+      </view>
+      <!-- 总价 -->
+      <view class="TotalBox">
+        <view class="TotalRight">
+          <view class="TotalNum">
+            <text>共</text>
+            <text>{{singleNum}}</text>
+            <text>条</text>
+          </view>
+          <view class="TotalPrice">
+            <text>￥{{singlePrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- btn -->
+    <view class="CountBtnGO">
+      <text bindtap="GoShop">加入购物车</text>
+      <text bindtap="BuGoShop">立即购买</text>
+    </view>
+  </view>
+
+     <!-- 商品属性窗口 -->
+    <view class="ShoppingTypeFidex" wx:if="{{TypeToggle}}">
+      <view class="ShoppingTypeMain">
+        <view class="ShoppingTypeAuto">
+          <!-- 标题 -->
+          <view class="ShoppingTypeTitle"><text>商品属性</text></view>
+          <!-- 属性 -->
+          <view class="ShoppingTypeType">
+            <view class="ShoppingTypeFor" wx:for="{{TypeMapList}}">
+              <text>{{item.key}}</text>
+              <text>{{item.value}}</text>
+            </view>
+          </view>
+        </view>
+        <!-- 按钮 -->
+        <view class="TypeFidexBtn" bindtap="CloseType">
+          <text>完成</text>
+        </view>
+      </view>
+    </view>

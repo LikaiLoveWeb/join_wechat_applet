@@ -1,0 +1,13 @@
+/**app.wxss**/
+ /* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} */
+/* 引入转义Css */
+@import "/pages/wxParse/wxParse.wxss";
+.wxToast_mask{width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:10000;background:rgba(0,0,0,0);opacity:0;display:none}.wxToast_show{display:block}.wxToast_content{max-width:80%;min-width:90px;position:absolute;left:50%;top:20%;transform:translate3d(-50%,0,0);padding:15px;color:#fff;font-size:17px;text-align:center;border-radius:5px;background:rgba(0,0,0,.8)}.wxToast_img{width:55px;height:55px;display:block;margin:0 auto 8px auto}
+

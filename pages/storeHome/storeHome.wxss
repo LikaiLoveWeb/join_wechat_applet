@@ -1,0 +1,164 @@
+.storeBox{
+  background-color: #f5f5f5;
+  min-height: 1205rpx;
+}
+.storeBJ{
+   width:100%;
+   height:200rpx;
+   position:relative;
+}
+.storeBanner{
+  width:750rpx;
+  position:absolute;
+  top:0px;
+  left:0px;
+  z-index: 99999;
+}
+.storeLogo{
+  width:104rpx;
+  height:104rpx;
+  float:left;
+}
+.storeLogo .storelogo{
+  width:104rpx;
+  height:104rpx;
+  padding-top:58rpx;
+  padding-left:27rpx;
+}
+.storeCenter{
+  float:left;
+ padding-left:45rpx;
+ padding-top:58rpx;
+
+
+}
+.storeText{
+  font-size:26rpx;
+  color:#ffffff;
+}
+.storeItem{
+  font-size:22rpx;
+  color:#ffffff;
+  height:30rpx;
+  margin-top:5px;
+  width:400rpx; 
+  white-space:nowrap;
+  text-overflow:ellipsis; 
+  overflow:hidden;
+}
+.storePhone .storeAddress{
+    width:16rpx;
+    height:22rpx;
+}
+.storeQU{
+  font-size:22rpx;
+  color:#ffffff;
+  display:inline-block;
+  padding-left:10rpx;
+
+}
+.storeRight{
+  width:146rpx;
+  height:50rpx;
+  float:right;
+  margin-right:30rpx;
+  margin-top:86rpx;
+  background:#48427d;
+  /* background-image: url(../../pages/images/storeBJ2.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%; */
+
+}
+.storemail{
+  width:22rpx;
+  height:21rpx;
+}
+.storeName{
+  font-size:24rpx;
+  color:#ffffff;
+  padding-left:15rpx;
+  padding-top:12rpx;
+}
+.commodity{
+  font-size:32rpx;
+  color:#333333;
+  padding-top:25rpx;
+  padding-left:25rpx;
+}
+/*商品的样式  */
+.advertising{
+  width:354rpx;
+  height:474rpx;
+  background:#ffffff;
+  margin-left:14rpx;
+  margin-top:20rpx;
+  float:left;
+}
+.advertising .storeItem1{
+  width:354rpx;
+  height:354rpx;
+}
+.advertising .advertisingText{
+    font-size:24rpx;
+    color:#333333;
+    margin-left:20rpx;
+    overflow: hidden;
+   text-overflow:ellipsis;
+   white-space: nowrap;
+   margin-top:20rpx;
+   height:35rpx;
+}
+.advertising .advertPrice{
+  font-size:28rpx;
+  color:#6e08a8;
+  margin-left:20rpx;
+ 
+}
+.advertising .advertqi{
+    font-size:20rpx;
+    color:#999;
+    margin-left:10rpx;
+}
+ 
+ /* 回到顶部的样式 */
+.com-widget-goTop { 
+  position: fixed; 
+  bottom: 250rpx; 
+  right: 10rpx; 
+  background: #000; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  z-index: 500; 
+  opacity: .7;
+} 
+.com-widget-goTop .icon-gotop{ 
+  background-color: #000; 
+  display: inline-block; 
+  width: 100rpx; 
+  height: 100rpx; 
+  line-height: 136rpx; 
+  font-size: 24rpx; 
+  color: #ffffff; 
+  text-align: center; 
+  border-radius: 50%; 
+  opacity: .7;
+  background: url("../images/topGO.png") no-repeat;
+  background-size: 30rpx ;
+  background-position: 35rpx 15rpx;
+}
+.lodingText{
+  text-align:center;
+  margin-top:5rpx;
+  margin-bottom:10rpx;
+}
+.gifloding{
+  width:60rpx;
+  height:60rpx;
+}
+.gifText{
+  float:right;
+  margin-top:18rpx;
+  margin-right:170rpx;
+  color:#999;
+
+}

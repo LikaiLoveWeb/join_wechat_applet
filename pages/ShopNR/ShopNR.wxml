@@ -1,0 +1,121 @@
+<!-- 内容 -->
+
+<view class="Shop-Con-Box" hidden="{{CountBoxNav}}">
+   <!-- 轮播 -->
+    <swiper class="SlideBox" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicatorActiveColor="{{indicatorActiveColor}}" indicatorColor="{{indicatorColor}}">
+      <block wx:for="{{resourceIdListArray}}">
+        <swiper-item>
+          <image src="{{'https://api.joinsilk.com/File/download?id='+item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  <view class="ShopConTitle">
+    <view class="ShopCon-Cen">
+      <view class="Shop-require {{supplyType=='现货'?'supplyTypeClass':''}}" wx:if="{{supplyType==''?false:true}}">
+        <text>{{supplyType}}</text>
+      </view>
+      <view class="TitleName">
+        <text>{{name}}</text>
+      </view>
+    </view>
+    <!-- price -->
+    <view class="Shop-price-Num">
+      <view class="ShopPrice-Cen">
+        <view class="ShopPriceCon">
+          <view class="LeftPriceSingle">
+            <text class="PriceSymbol">￥</text>
+            <text class="PriceNumber">{{dataMore.price}}</text>
+            <text class="PriceType">面议</text>
+          </view>
+          <view class="LeftPriceNum">
+            <text>{{dataMore.minimum}}{{dataMore.calculateType}}起批</text>
+          </view>
+        </view>
+      </view>
+      <view class="Shop-site">
+        <view class="Shop-SiteCon">
+          <view class="attributeT" bindtap="TypeBtnFixed">
+            <text>商品属性</text>
+            <!-- 右边箭头 -->
+            <image src="../images/arrowsBottom.png" class="attributeArrows"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品属性窗口 -->
+  <view class="ShoppingTypeFidex" wx:if="{{TypeToggle}}">
+    <view class="ShoppingTypeMain">
+      <view class="ShoppingTypeAuto">
+        <!-- 标题 -->
+        <view class="ShoppingTypeTitle"><text>商品属性</text></view>
+        <!-- 属性 -->
+        <view class="ShoppingTypeType">
+          <view class="ShoppingTypeFor" wx:for="{{TypeMapList}}">
+            <text>{{item.key}}</text>
+            <text>{{item.value}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 按钮 -->
+      <view class="TypeFidexBtn" bindtap="CloseType">
+        <text>完成</text>
+      </view>
+    </view>
+  </view>
+  <!-- 店铺信息 -->
+  <!-- 清楚浮动 -->
+  <view class="clear"></view>
+  <view class="ShopMessage">
+    <view class="ShopMain">
+      <view class="ShopMessageLogo">
+        <view class="MessageLogo">
+          <image src="{{'https://api.joinsilk.com/File/download?id='+dataMore.storeLogo}}" wx:if="{{normalImg}}"></image>
+          <image src="../images/Nologo.png" wx:if="{{defaultImg}}"></image>
+        </view>
+        <view class="MessageLogoBox">
+          <view class="MessageLogoTitle">{{storeKeywordNames}}</view>
+          <view class="MessageLogoImg">
+            <image src="../images/satisfaction.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="ShopMessageBtn" bindtap="GoShopHome">进店逛逛</view>
+    </view>
+  </view>
+  <!-- 商品详情 -->
+  <view class="ShopDetails">
+    <!-- <import src="../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:detail.nodes}}" /> -->
+     <view wx:for="{{imgurlList}}" class="ViewImgList">
+          <image src="{{item.src_btn}}" wx:key="index" mode="aspectFit" data-index="{{index}}" binderror="errImg"></image>
+    </view>
+  </view>
+  <!-- 窗口 -->
+  <view class="ShopFidexBox">
+    <view class="ShopFidexService">
+      <image src="../images/service.png" class="serviceImages"></image>
+      <text>客服</text>
+      <contact-button type="default-light" size="22rpx" session-from="weapp" class="ContactBtn"></contact-button>
+    </view>
+
+    <view class="ShopFidexStore" bindtap="GoShopHome">
+      <image src="../images/store.png" class="StoreImages"></image>
+      <text>店铺</text>
+    </view>
+    <view class="ShopFidexBtn" bindtap="calling">
+      电话询价
+    </view>
+  </view>
+</view>
+<!-- 无商品 -->
+<view class="ShopNavConNo" wx:if="{{Toggle}}">
+  <view class="ShopNavConNoMain">
+    <view class="ShopNavConNoImg">
+      <image src="../images/StoreNo.png"></image>
+    </view>
+    <view class="ShopNoLook">暂时无法查看此商品</view>
+    <view class="ShopsoldOut">该商品无法查看或已下架</view>
+    <view class="ShopGoHome" bindtap="GoShoppingHome">返回首页</view>
+  </view>
+</view>

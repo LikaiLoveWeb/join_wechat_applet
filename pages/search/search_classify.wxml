@@ -1,0 +1,52 @@
+<scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}"   bindscroll="scroll" bindscrolltolower= "scrolltolower" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+<view class="classification">
+<scroll-view class="bigWrap" scroll-x style="width:750rpx;height:85rpx;background:#ffffff;border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6">
+   <view class="topscroole" style="{{'width:'+topscrooleW}}">
+      <view class="{{Navtab==idx ? 'topscroller active' : 'topscroller'}}"
+          wx:for="{{childname}}"
+          wx:for-index="idx"
+            wx:for-item="itemName"
+            data-index="{{idx}}"data-nametwoid="{{itemName.id}}" data-url="{{itemName.url}}" bindtap="switchTab">
+            {{itemName.name}}
+      </view>
+</view>
+</scroll-view>
+<view  class="containerMain withtab">
+  <view class="ctnt0">
+    <!--需要循环的商品列表-->
+      <view class="advertising"  wx:for="{{orderlistArr}}"  wx:for-item="itemName" bindtap="goodshop" data-goodsid="{{itemName.id}}">
+          <view><image src="{{'https://api.joinsilk.com//File/download?id='+itemName.path}}" class="storeItem"></image></view>
+          <view class="advertisingText">{{itemName.name}}</view>
+           <text class="advertPrice">￥{{itemName.price}}</text>
+           <text class="advertqi">起</text>
+    </view>
+    <view style="clear:both"></view>
+     </view>
+<view style="clear:both"></view>
+  <!--无商品显示的  -->
+  <view  wx:if="{{orderlistArr==''?true:false}}" class="shopnone">
+      <view class="ordernoneImg"><image src="../../pages/images/shop.png" class="ordernone"></image></view>
+      <view class="text">没有匹配的商品</view>
+  </view>
+</view>
+</view>
+
+<!--回到顶部的html  -->
+
+<view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+   <view class="icon-gotop">
+    <image src="../../pages/images/topGO.png" style="width:30rpx;height:30rpx;" class="topImg"></image>
+       置顶
+    </view>
+ </view>
+
+
+ <view style="clear:both"></view>
+<view class="tips1" >
+      <view wx:if="{{hasMore}}" style="margin-left:270rpx;">
+     <image src="../../pages/images/loading.gif" class="gifloding"></image>
+       <text style="font-size:28rpx;" class="gifText">玩命的加载中...</text>
+      </view>
+      <view wx:if="{{hasNOne}}" style="width:750rpx;height:30rpx;"><text style="font-size:28rpx;margin-left:300rpx;">没有更多内容了</text></view>
+</view>
+</scroll-view>
